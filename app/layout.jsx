@@ -1,5 +1,6 @@
 import { Jost, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
 const play_fair = Playfair_Display({
   subsets: ["latin"],
@@ -24,7 +25,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${play_fair.variable} ${jost.variable}`}>
-      <body className="font-jost text-primary">{children}</body>
+      <body className="font-jost text-primary">
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }

@@ -13,7 +13,7 @@ module.exports = {
       },
 
       colors: {
-        "primary-500": rgba(62, 84, 235, 1),
+        "primary-500": "#3E54EB",
       },
 
       textColor: {
