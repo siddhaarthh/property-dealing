@@ -21,7 +21,7 @@ function Navbar() {
         />
       </Link>
 
-      <ul className="flex w-[45%] justify-between">
+      <ul className="flex w-[45%] justify-between ">
         {navLinks.map((link, index) => (
           <li key={index}>
             <Link
