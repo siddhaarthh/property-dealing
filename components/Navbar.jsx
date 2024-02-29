@@ -10,11 +10,11 @@ import { navLinks } from "@/constants/constant";
 function Navbar() {
   const pathName = usePathname();
   return (
-    <nav className="flex justify-between md:px-5 lg:px-[10rem] py-3 items-center">
+    <nav className="flex items-center  justify-between py-3 text-lg md:px-5 lg:px-[10rem]">
       <Link href="/">
         <Image
           src={logo}
-          className="w-[147.67px] h-[60px]"
+          className="h-[60px] w-[147.67px]"
           width={0}
           height={0}
           alt="Bitway Logo"
@@ -34,7 +34,7 @@ function Navbar() {
         ))}
       </ul>
 
-      <button className="bg-primary-500 px-5 py-2 rounded-[10px] text-white">
+      <button className="rounded-[10px] bg-primary-500 px-5 py-2 text-white">
         Login
       </button>
     </nav>

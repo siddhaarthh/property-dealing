@@ -14,6 +14,7 @@ module.exports = {
 
       colors: {
         "primary-500": "#3E54EB",
+        "grey-500": "#A4A6AC",
       },
 
       textColor: {
