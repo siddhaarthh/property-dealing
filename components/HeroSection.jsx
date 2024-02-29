@@ -5,7 +5,7 @@ import heroImg from "@/assets/hero-image.png";
 
 function HeroSection() {
   return (
-    <section className="relative mb-10 w-full py-5 md:px-5 lg:px-[10rem]">
+    <section className="relative mb-10 w-full pt-5 lg:px-[10rem]">
       <Image
         className="w-full"
         src={heroImg}

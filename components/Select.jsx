@@ -12,13 +12,13 @@ function Select({ state, setState, option, selectIcon }) {
   return (
     <div className="relative w-full">
       <button
-        className="rounded  bg-transparent text-white focus:outline-none"
+        className="rounded bg-transparent text-white focus:outline-none"
         onClick={toggleDropdown}
       >
         {state}
       </button>
       {isOpen && (
-        <div className="absolute -left-20 right-0  top-10 z-10 mt-2 w-[270px] rounded border border-gray-300 bg-white text-base shadow-lg">
+        <div className="absolute -left-[45%] right-0  top-10 z-10 mt-2 w-[145%] rounded border border-gray-300 bg-white text-base shadow-lg">
           {/* Dropdown options */}
 
           {option.map((option, index) => {
@@ -32,11 +32,11 @@ function Select({ state, setState, option, selectIcon }) {
                 }}
               >
                 <Image
-                  className="w-[40px] rounded-lg   bg-[#A4A6AC0D] p-3   text-black"
+                  className="rounded-lg   bg-[#A4A6AC0D] p-3   text-black"
                   src={selectIcon}
-                  width={0}
+                  width={40}
                   height={0}
-                  alt="location icon"
+                  alt="search  icon"
                 />
                 {option}
               </button>

@@ -18,8 +18,8 @@ function SearchBox() {
   const [property, setProperty] = useState("Select Property");
 
   return (
-    <div className="absolute -bottom-8 right-[300px] flex h-[100px] w-[945px] items-center gap-8 rounded-[10px] bg-primary-500 px-5">
-      <div className="flex h-[60px] w-[800px] gap-3">
+    <div className="absolute -bottom-[4%] right-[18%] flex w-[65%]  items-center gap-8 rounded-xl bg-primary-500 p-5">
+      <div className="flex w-[90%] gap-3">
         <SearchProperty
           src={locationIcon}
           label={"Location"}
@@ -55,7 +55,9 @@ function SearchBox() {
           state={property}
         />
       </div>
-      <Image src={search} width={50} height={50} alt="search icon" />
+      <button className="border-none bg-transparent">
+        <Image src={search} width={50} height={50} alt="search icon" />
+      </button>
     </div>
   );
 }

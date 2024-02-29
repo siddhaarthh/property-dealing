@@ -20,7 +20,7 @@ function SearchProperty({
         height={50}
         alt="location icon"
       />
-      <div className="flex w-[210px] flex-col  border-r border-[#FFFFFF1A]">
+      <div className="flex w-[200px] flex-col  border-r border-[#FFFFFF1A]">
         <label htmlFor={htmlFor} className="text-[20px] font-[700] text-white ">
           {label}
         </label>
