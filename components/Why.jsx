@@ -9,7 +9,7 @@ import WhyCard from "./WhyCard";
 
 function Why() {
   return (
-    <section className="relative mx-auto mb-20 w-[1200px] ">
+    <section className="relative mx-auto w-[1200px] ">
       <Image
         src={pattern}
         width={100}
