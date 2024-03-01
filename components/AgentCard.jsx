@@ -8,7 +8,7 @@ function AgentCard({ src, name, about }) {
 
       <h5 className="font-playfair text-[24px] font-bold">{name}</h5>
       <p className="text-gray-500">Real Estate Agent</p>
-      <div className="lg:w-3/4">
+      <div className="w-3/4">
         <p>{about}</p>
       </div>
     </div>
