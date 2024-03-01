@@ -9,29 +9,30 @@ import WhyCard from "./WhyCard";
 
 function Why() {
   return (
-    <section className="relative mx-auto w-[80%] px-3 ">
+    <section className="relative mx-auto mt-10 flex w-full flex-col items-center px-3 md:mt-0 md:w-[80%] ">
       <Image
         src={pattern}
         width={100}
         height={0}
         alt="pattern icon"
-        className="absolute -top-20 right-0 z-0 hidden lg:flex"
+        className="absolute -right-[12%] -top-20 z-0 hidden lg:flex lg:w-[100px] xl:right-0"
       />
 
-      <div className="flex w-full flex-col items-center justify-between lg:flex-row">
-        <div className="flex flex-col gap-10">
-          <div>
-            <h3 className=" mb-2 font-playfair text-[40px] font-[700] text-primary">
+      <div className="w-full justify-between lg:flex ">
+        <div className="flex flex-col items-center gap-10 md:items-start">
+          <div className="w-5/6 ">
+            <h3 className=" mb-2 whitespace-nowrap  font-playfair text-[28px]  font-[700] sm:text-[30px] md:text-[36px]">
               Why should you Choose us ?
             </h3>
-            <p className=" text-gray-600">
-              Exceptional service, diverse properties, and personalized support
-              for <br /> unforgettable rental experiences. Everything you need
-              for a <br /> seamless rental experience.
+            <p className="w-full text-gray-600 md:w-max">
+              Exceptional service, diverse properties and personalized support
+              for <br className="hidden md:block" /> unforgettable rental
+              experiences. Everything you need for a
+              <br className="hidden md:block" /> seamless rental experience.
             </p>
           </div>
 
-          <div className="flex flex-col gap-12">
+          <div className="flex flex-col items-center gap-12 md:items-start">
             <WhyCard
               src={star}
               title={"Best Platform"}
@@ -61,7 +62,7 @@ function Why() {
           </div>
         </div>
         <Image
-          className="w-[80%]"
+          className="mt-10 w-[100%] justify-self-center md:mt-0 lg:w-[80%]"
           src={whyMan}
           width={0}
           height={0}

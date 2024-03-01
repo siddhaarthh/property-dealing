@@ -7,26 +7,28 @@ import ReviewCard from "./ReviewCard";
 function Reviews() {
   return (
     <section className="w-full bg-gray-100 py-10 pb-20 md:px-5 lg:px-[10rem]">
-      <div className="flex justify-between">
-        <h3 className="font-playfair text-[40px] font-[700]">Testimonials</h3>
+      <div className="mb-5 flex items-center justify-between px-3">
+        <h3 className="font-playfair text-[20px] font-[700] sm:text-[28px] md:text-[32px] xl:text-[40px]">
+          Testimonials
+        </h3>
 
-        <div className="mb-10 flex gap-3">
-          <button className="rounded-xl border bg-[##A4A6AC0D] p-2">
+        <div className="flex items-center gap-2 lg:gap-3">
+          <button className="rounded-xl border bg-[##A4A6AC0D] p-2 xl:p-2 xl:px-3">
             <Image
-              className=" rotate-180"
+              className="w-6 rotate-180 md:w-8"
               src={leftArrow}
               width={30}
               height={30}
               alt="plus icon"
             />
           </button>
-          <button className="rounded-xl border bg-primary-500 p-2">
+          <button className="rounded-xl border bg-primary-500 p-2 xl:p-2 xl:px-3">
             <Image src={rightArrow} width={30} height={30} alt="plus icon" />
           </button>
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-10">
+      <div className="grid-col-1 grid gap-10 px-5 md:grid-cols-2 lg:px-0 xl:grid-cols-3">
         <ReviewCard />
         <ReviewCard />
         <ReviewCard />

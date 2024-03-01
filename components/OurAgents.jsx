@@ -8,8 +8,8 @@ import pattern from "@/assets/pattern.svg";
 
 function OurAgents() {
   return (
-    <section className="relative mx-auto flex w-[90%]  flex-col gap-10 lg:w-[80%] ">
-      <div>
+    <section className="relative mx-auto flex w-[90%]  flex-col gap-10 xl:w-[80%] ">
+      <div className="w-[400px] self-center md:self-start">
         <h3 className="mb-1 font-playfair text-[40px] font-bold">Our Agents</h3>
 
         <p className="text-gray-500">
@@ -18,7 +18,7 @@ function OurAgents() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 place-items-center gap-y-5 lg:grid-cols-3">
+      <div className="flex flex-col items-center gap-10  md:flex-row md:justify-between ">
         {/* agent 1 */}
         <AgentCard
           src={agent1}
@@ -28,25 +28,13 @@ function OurAgents() {
           }
         />
 
-        {/* agent 2 */}
-        <div className="flex flex-col gap-2">
-          <h5 className="font-playfair text-[24px] font-bold">
-            Johnson Watson
-          </h5>
-          <p className="text-gray-500">Real Estate Agent</p>
-          <div className="w-3/4">
-            <p>
-              Expertly understands your needs, ensures a smooth journey to your
-              dream home.
-            </p>
-          </div>
-          <Image
-            src={agent2}
-            width={300}
-            height={300}
-            alt="a woman siting on chair"
-          />
-        </div>
+        <AgentCard
+          src={agent2}
+          name={"Johnson Watson"}
+          about={
+            "Expertly understands your needs, ensures a smooth journey to your dream home"
+          }
+        />
 
         {/* agent 3 */}
         <AgentCard
@@ -59,7 +47,7 @@ function OurAgents() {
 
         <Image
           src={pattern}
-          className="absolute -right-[13%] bottom-0 hidden lg:block"
+          className="absolute -right-[13%] bottom-0 hidden xl:block"
           width={0}
           height={0}
           alt="Pattern image"
