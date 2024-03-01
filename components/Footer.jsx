@@ -15,7 +15,7 @@ function Footer() {
 
           <p className=" text-white">
             BitWay Rentals: Where Your Perfect Space Awaits. <br /> Simplifying
-            Rentals, Elevating Experiences, Redefining Comfort.
+            Rentals, Elevating Experiences.
           </p>
         </div>
 
@@ -47,7 +47,7 @@ function Footer() {
           <div className="flex flex-col text-white  md:gap-3">
             <h3 className="text-[18px] font-[700]">Service</h3>
             <ul className="flex gap-5 whitespace-nowrap md:flex-col">
-              <li>Payment & Tax</li>
+              <li>Payment</li>
               <li>Feature</li>
               <li>View Booking</li>
               <li>Contact Us</li>
