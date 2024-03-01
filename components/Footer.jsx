@@ -84,8 +84,8 @@ function Footer() {
         </div>
       </div>
 
-      <div className="flex items-center justify-between pt-5">
-        <p className="h-full text-center text-white">
+      <div className="flex flex-col items-center justify-between gap-5 pt-5 md:flex-row md:gap-0">
+        <p className=" text-center text-white">
           &copy; {new Date().getFullYear()} Bitway Rentals. All Rights Reserved.
         </p>
 
