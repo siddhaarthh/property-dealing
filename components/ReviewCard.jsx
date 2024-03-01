@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import star from "@/assets/ReviewStar.svg";
+import star from "@/assets/reviewStar.svg";
 import reviewer from "@/assets/reviewer.svg";
 
 function ReviewCard() {
