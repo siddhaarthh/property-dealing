@@ -21,7 +21,7 @@ function PropertyCard() {
       />
 
       <div className="mt-2 flex flex-col gap-2 border-b-2 px-1 pb-4">
-        <h5 className="font-playfair text-[22px] font-[700] text-primary">
+        <h5 className="font-playfair text-[18px] font-[700] text-primary md:text-[22px]">
           Luxury Apartment in California
         </h5>
         <p className="text-[20px]">$250000</p>
