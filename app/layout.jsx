@@ -26,7 +26,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${play_fair.variable} ${jost.variable}`}>
-      <body className="font-jost text-primary">
+      <body className="overflow-x-hidden font-jost text-primary">
         <Navbar />
         {children}
         <Footer />

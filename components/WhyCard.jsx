@@ -9,7 +9,7 @@ function WhyCard({ src, alt, title, description }) {
         src={src}
         width={60}
         height={60}
-        alt="location icon"
+        alt={alt}
       />
 
       <div>

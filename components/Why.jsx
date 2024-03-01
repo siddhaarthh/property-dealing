@@ -9,16 +9,16 @@ import WhyCard from "./WhyCard";
 
 function Why() {
   return (
-    <section className="relative mx-auto w-[1200px] ">
+    <section className="relative mx-auto w-[80%] px-3 ">
       <Image
         src={pattern}
         width={100}
         height={0}
         alt="pattern icon"
-        className="absolute -top-24 right-0 z-0"
+        className="absolute -top-20 right-0 z-0 hidden lg:flex"
       />
 
-      <div className="flex w-full items-center justify-between">
+      <div className="flex w-full flex-col items-center justify-between lg:flex-row">
         <div className="flex flex-col gap-10">
           <div>
             <h3 className=" mb-2 font-playfair text-[40px] font-[700] text-primary">
@@ -61,9 +61,10 @@ function Why() {
           </div>
         </div>
         <Image
+          className="w-[80%]"
           src={whyMan}
-          width={570}
-          height={800}
+          width={0}
+          height={0}
           priority={true}
           alt="man standing and showing thumbs up"
         />

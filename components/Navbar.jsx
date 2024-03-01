@@ -10,12 +10,12 @@ import { navLinks } from "@/constants/constant";
 function Navbar() {
   const pathName = usePathname();
   return (
-    <nav className="mx-auto flex w-[80%] items-center justify-between py-3 text-lg">
+    <nav className="mx-auto flex items-center justify-between px-5 py-3 text-lg lg:px-5 xl:w-[80%]">
       <Link href="/" className=" inline-block w-[150px]">
         <Image src={logo} width={0} height={0} alt="Bitway Logo" />
       </Link>
 
-      <ul className="flex w-[45%] justify-between">
+      <ul className="hidden w-[45%] justify-between md:flex lg:flex">
         {navLinks.map((link, index) => (
           <li key={index}>
             <Link

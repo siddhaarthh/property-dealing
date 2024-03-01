@@ -8,8 +8,8 @@ import parking from "@/assets/parking-white.svg";
 
 function Feature() {
   return (
-    <section className="relative mx-auto mb-24 w-[1200px]">
-      <div className="absolute left-0 top-0 ">
+    <section className="relative mx-auto mb-24 w-[80%]">
+      <div className="absolute left-0 top-0 hidden lg:block">
         <Image src={pattern} width={0} height={0} alt="pattern image" />
       </div>
 
@@ -35,8 +35,8 @@ function Feature() {
             />
           </div>
 
-          <div className="b absolute -bottom-20 right-24  flex w-max  flex-col items-start gap-3 rounded-xl bg-primary-500 p-6 text-white">
-            <h5 className="font-playfair text-[24px] font-bold">
+          <div className=" absolute -bottom-20 right-24  flex w-max  flex-col items-start gap-3 rounded-xl bg-primary-500 p-6 text-white">
+            <h5 className="font-playfair  text-[24px] font-bold">
               Modern luxury sea view villa sale in California
             </h5>
             <p className="text-[20px]">$20,000,000</p>

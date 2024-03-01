@@ -11,17 +11,16 @@ import share from "@/assets/share.svg";
 
 function PropertyCard() {
   return (
-    <div className="] flex flex-col items-center gap-3 rounded-2xl bg-white p-3 shadow-md ">
-      <div className="h-[266] w-[326px]">
-        <Image
-          src={property1}
-          width={0}
-          height={0}
-          alt="property image"
-          className="h-full w-full rounded-2xl object-cover"
-        />
-      </div>
-      <div className="mt-2 flex flex-col gap-2 border-b-2 px-2 pb-4">
+    <div className=" flex flex-col items-center gap-3 rounded-2xl bg-white p-5 shadow-md ">
+      <Image
+        src={property1}
+        width={0}
+        height={0}
+        alt="property image"
+        className="h-full w-full rounded-2xl object-cover"
+      />
+
+      <div className="mt-2 flex flex-col gap-2 border-b-2 px-1 pb-4">
         <h5 className="font-playfair text-[22px] font-[700] text-primary">
           Luxury Apartment in California
         </h5>

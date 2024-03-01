@@ -8,7 +8,7 @@ import pattern from "@/assets/pattern.svg";
 
 function OurAgents() {
   return (
-    <section className="relative mx-auto flex h-screen w-[1200px] flex-col gap-10 ">
+    <section className="relative mx-auto flex w-[90%]  flex-col gap-10 lg:w-[80%] ">
       <div>
         <h3 className="mb-1 font-playfair text-[40px] font-bold">Our Agents</h3>
 
@@ -18,7 +18,7 @@ function OurAgents() {
         </p>
       </div>
 
-      <div className="grid grid-cols-3">
+      <div className="grid grid-cols-1 place-items-center gap-y-5 lg:grid-cols-3">
         {/* agent 1 */}
         <AgentCard
           src={agent1}
@@ -59,7 +59,7 @@ function OurAgents() {
 
         <Image
           src={pattern}
-          className="absolute -right-[13%] bottom-0"
+          className="absolute -right-[13%] bottom-0 hidden lg:block"
           width={0}
           height={0}
           alt="Pattern image"
