@@ -12,6 +12,7 @@ function HeroSection() {
         width={0}
         height={0}
         alt="hero image"
+        priority={true}
       />
 
       <SearchBox />
