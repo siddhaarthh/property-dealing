@@ -12,7 +12,7 @@ import Link from "next/link";
 function PropertyCard({ property }) {
   return (
     <div className=" flex flex-col items-center gap-3 rounded-2xl bg-white p-5 shadow-md ">
-      <Link href={`/properties/${property._id}`}>
+      <Link href={`/properties/${property.name}`}>
         <Image
           src={`/assets/propertyImages/${property.images[1]}.jpg`}
           width={400}

@@ -16,7 +16,9 @@ function BreadCrumb() {
       {path.map((path, index) => {
         return (
           <div key={index} className="text-[14px] capitalize  text-primary">
-            <Link href={`${path === "home" ? "/" : path}`}>{path}</Link>{" "}
+            <Link href={`${path === "home" ? "/" : path}`}>
+              {path.replace("%20", " ")}
+            </Link>{" "}
             {index < path.length - 1 && ( // Use && to conditionally render
               <Image
                 src={directionRight}
