@@ -30,15 +30,15 @@ function PropertyCard({ property }) {
           <div className="flex items-center gap-5">
             <div className="flex items-center gap-3">
               <Image src={bed} width={25} height={0} alt="bed icon" />
-              <span className="text-lg">{property.bedrooms}</span>
+              <span className="text-lg">{property.details.bedrooms}</span>
             </div>
             <div className="flex items-center gap-3">
               <Image src={bath} width={25} height={0} alt="bath icon" />
-              <span className="text-lg">{property.bathrooms}</span>
+              <span className="text-lg">{property.details.bathrooms}</span>
             </div>
             <div className="flex items-center gap-3">
               <Image src={parking} width={25} height={0} alt="car icon" />
-              <span className="text-lg">{property.parking}</span>
+              <span className="text-lg">{property.details.parking}</span>
             </div>
           </div>
         </div>
