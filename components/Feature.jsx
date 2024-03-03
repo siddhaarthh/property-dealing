@@ -14,8 +14,8 @@ function Feature() {
       </div>
 
       <div className="flex h-full flex-col items-center justify-center gap-10">
-        <div className="mt-10  text-center">
-          <h3 className="font-playfair text-[40px] font-[700] text-primary">
+        <div className="mt-4 text-center md:mt-10">
+          <h3 className="text font-playfair text-[30px] font-[700] text-primary md:text-[40px]">
             Featured Properties
           </h3>
           <p className="text-gray-500 sm:text-xl md:text-2xl">

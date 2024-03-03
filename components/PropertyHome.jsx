@@ -10,8 +10,8 @@ async function PropertyHome() {
   return (
     <section className="w-full bg-gray-100 py-10 pb-20 md:px-5 lg:px-[10rem]">
       <div className="mb-5 flex items-center justify-between px-3">
-        <h3 className="font-playfair text-[20px] font-[700] sm:text-[28px] md:text-[32px] xl:text-[40px]">
-          Explore the latest properties available
+        <h3 className="sm: font-playfair text-[18px] font-[700] sm:text-[28px] md:text-[32px] xl:text-[40px]">
+          Explore our available properties
         </h3>
 
         <div className="flex items-center gap-2 lg:gap-3">

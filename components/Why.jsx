@@ -9,7 +9,7 @@ import WhyCard from "./WhyCard";
 
 function Why() {
   return (
-    <section className="relative mx-auto mt-10 flex w-full flex-col items-center px-3 md:mt-0 md:w-[80%] ">
+    <section className="relative mx-auto mt-5 flex w-full flex-col items-center md:mt-0 md:w-[80%] md:px-3 ">
       <Image
         src={pattern}
         width={100}
@@ -19,9 +19,9 @@ function Why() {
       />
 
       <div className="w-full justify-between lg:flex ">
-        <div className="flex flex-col items-center gap-10 md:items-start">
+        <div className="flex flex-col gap-10 p-5 md:items-start">
           <div className="w-5/6 ">
-            <h3 className=" mb-2 whitespace-nowrap  font-playfair text-[28px]  font-[700] sm:text-[30px] md:text-[36px]">
+            <h3 className=" mb-2 whitespace-nowrap  font-playfair text-[26px]  font-[700] sm:text-[30px] md:text-[36px]">
               Why should you Choose us ?
             </h3>
             <p className="w-full text-gray-600 md:w-max">
@@ -32,7 +32,7 @@ function Why() {
             </p>
           </div>
 
-          <div className="flex flex-col items-center gap-12 md:items-start">
+          <div className="flex flex-col  gap-12 md:items-start">
             <WhyCard
               src={star}
               title={"Best Platform"}

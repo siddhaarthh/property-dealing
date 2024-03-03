@@ -8,13 +8,14 @@ import pattern from "@/assets/pattern.svg";
 
 function OurAgents() {
   return (
-    <section className="relative mx-auto flex w-[90%]  flex-col gap-10 xl:w-[80%] ">
-      <div className="w-[400px] self-center md:self-start">
+    <section className="relative mx-auto  flex  w-[90%]  flex-col gap-10 xl:w-[80%] ">
+      <div className="self-center  md:self-start">
         <h3 className="mb-1 font-playfair text-[40px] font-bold">Our Agents</h3>
 
         <p className="text-gray-500">
-          Generous agents understand your needs and emotions, <br /> guiding you
-          to find your perfect home.
+          Generous agents understand your needs and emotions,{" "}
+          <br className="hidden md:block" /> guiding you to find your perfect
+          home.
         </p>
       </div>
 
