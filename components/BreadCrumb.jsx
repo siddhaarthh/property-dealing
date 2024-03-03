@@ -15,7 +15,10 @@ function BreadCrumb() {
     <div className="flex items-center">
       {path.map((path, index) => {
         return (
-          <div key={index} className="text-[14px] capitalize  text-primary">
+          <div
+            key={index}
+            className="py-3 text-[14px]  capitalize text-primary"
+          >
             <Link href={`${path === "home" ? "/" : path}`}>
               {path.replace("%20", " ")}
             </Link>{" "}

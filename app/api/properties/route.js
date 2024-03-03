@@ -4,11 +4,8 @@ import { Property } from "@/model/propertyModel";
 export const GET = async (request) => {
   try {
     await ConnectDB();
-
     const property = await Property.find();
-
     const propertyJSON = JSON.stringify(property);
-
     return new Response(propertyJSON, {
       status: 200,
     });

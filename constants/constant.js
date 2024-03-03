@@ -7,4 +7,20 @@ const navLinks = [
   { name: "Contact Us", path: "/contact" },
 ]; // Path: components/Navbar.jsx
 
-export { navLinks };
+const propertyDetails = [
+  {
+    name: "Description",
+    path: "/description",
+  },
+  {
+    name: "Features",
+    path: "/features",
+  },
+
+  {
+    name: "Schedule a Tour",
+    path: "/schedule-tour",
+  },
+];
+
+export { navLinks, propertyDetails };
