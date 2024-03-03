@@ -11,7 +11,7 @@ import Link from "next/link";
 
 function PropertyCard({ property }) {
   return (
-    <div className=" flex flex-col items-center gap-3 rounded-2xl bg-white p-5 shadow-md ">
+    <div className=" flex h-max flex-col items-center gap-3 rounded-2xl bg-white p-5 shadow-md ">
       <Link href={`/properties/${property._id}`}>
         <Image
           src={`/assets/propertyImages/${property.images[1]}.jpg`}
