@@ -18,21 +18,21 @@ function Select({ state, setState, option, selectIcon }) {
         {state}
       </button>
       {isOpen && (
-        <div className="absolute -left-[45%] right-0 top-10  z-10 mt-2 w-[145%] rounded border border-gray-300 bg-white text-base shadow-lg md:text-lg">
+        <div className="absolute left-[10%] z-50 mt-2  w-[90%]  rounded border border-gray-300 bg-white text-base shadow-lg md:-left-[45%] md:right-0 md:top-10 md:w-[145%] md:text-lg">
           {/* Dropdown options */}
 
           {option.map((option, index) => {
             return (
               <button
                 key={index}
-                className="flex w-full items-center py-2 hover:bg-gray-100 focus:outline-none md:gap-2 md:px-2 lg:gap-3 lg:px-4"
+                className="flex w-full items-center px-3  py-2 hover:bg-gray-100 focus:outline-none md:gap-2 md:px-2 lg:gap-3 lg:px-4"
                 onClick={() => {
                   setState(option);
                   setIsOpen(false);
                 }}
               >
                 <Image
-                  className="rounded-lg bg-[#A4A6AC0D] p-3   text-black"
+                  className="mr-3 justify-self-center rounded-lg bg-[#A4A6AC0D] p-3   text-black"
                   src={selectIcon}
                   width={40}
                   height={0}
