@@ -2,6 +2,7 @@ import { Jost, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import AuthProvider from "@/components/AuthProvider";
 
 const play_fair = Playfair_Display({
   subsets: ["latin"],
@@ -25,12 +26,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${play_fair.variable} ${jost.variable}`}>
-      <body className="overflow-x-hidden font-jost text-primary">
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <AuthProvider>
+      <html lang="en" className={`${play_fair.variable} ${jost.variable}`}>
+        <body className="overflow-x-hidden font-jost text-primary">
+          <Navbar />
+          {children}
+          <Footer />
+        </body>
+      </html>
+    </AuthProvider>
   );
 }

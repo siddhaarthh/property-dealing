@@ -1,10 +1,8 @@
 const navLinks = [
   { name: "Home", path: "/" },
-  { name: "About Us", path: "/about" },
   { name: "Properties", path: "/properties" },
-  { name: "Agents", path: "/agents" },
-  { name: "Blog", path: "/blog" },
-  { name: "Contact Us", path: "/contact" },
+  { name: "Add New Property", path: "/properties/add" },
+  { name: "About Us", path: "/about" },
 ]; // Path: components/Navbar.jsx
 
 const propertyDetails = [
