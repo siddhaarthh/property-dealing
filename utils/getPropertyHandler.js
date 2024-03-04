@@ -7,7 +7,7 @@ export const getPropertyHandler = async () => {
 };
 
 export const getSingleProperty = async (id) => {
-  const res = await fetch(`${process.env.API_URL}api/properties/${id}`, {
+  const res = await fetch(`${process.env.API_URL}/api/properties/${id}`, {
     cache: "no-store",
   });
   const data = await res.json();
