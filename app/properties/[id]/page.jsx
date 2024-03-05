@@ -47,7 +47,7 @@ async function PropertiesDetails({ params }) {
       </div>
 
       {/* property details */}
-      <div className="mx-auto mb-10 flex lg:w-[80%]">
+      <div className="mx-auto mb-10 flex flex-col gap-2 lg:w-[80%] lg:flex-row">
         <div className="flex w-full flex-col justify-center gap-2">
           <h4 className=" font-playfair text-3xl">{property.name}</h4>
           <div className="mb-2 flex items-center gap-2">

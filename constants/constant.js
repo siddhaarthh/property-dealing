@@ -10,15 +10,6 @@ const propertyDetails = [
     name: "Description",
     path: "/description",
   },
-  {
-    name: "Features",
-    path: "/features",
-  },
-
-  {
-    name: "Schedule a Tour",
-    path: "/schedule-tour",
-  },
 ];
 
 export { navLinks, propertyDetails };

@@ -2,14 +2,14 @@ import React from "react";
 
 function AddProperty() {
   return (
-    <section className="mx-auto lg:w-[80%]">
-      <div className=" w-full">
-        {/* <h3 className="mb-4 font-playfair text-3xl  font-bold text-primary-500">
+    <section className="mx-auto w-full px-5 lg:w-[80%] lg:px-0">
+      <div className="w-full">
+        <h3 className="mb-4 mt-6 font-playfair  text-3xl font-bold">
           Add new property
-        </h3> */}
+        </h3>
 
-        <form>
-          <div className="mb-5 grid grid-cols-2 gap-y-5">
+        <form className="w-full">
+          <div className="mb-5 grid  gap-y-5 lg:grid-cols-2">
             <div className="flex flex-col">
               <label className="mb-2 font-bold" htmlFor="propertyName">
                 Property Name :
@@ -17,7 +17,7 @@ function AddProperty() {
               <input
                 type="text"
                 id="propertyName"
-                className="h-[50px] w-1/2 rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none"
+                className="h-[50px] rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none lg:w-1/2"
                 placeholder="Enter Property Name"
               />
             </div>
@@ -28,7 +28,7 @@ function AddProperty() {
               <input
                 type="number"
                 id="price"
-                className="h-[50px] w-1/2 rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none"
+                className="h-[50px] rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none lg:w-1/2"
                 placeholder="Enter Price"
               />
             </div>
@@ -39,7 +39,7 @@ function AddProperty() {
               <input
                 type="text"
                 id="address"
-                className="h-[50px] w-1/2 rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none"
+                className="h-[50px] rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none lg:w-1/2"
                 placeholder="Enter Address"
               />
             </div>
@@ -50,7 +50,7 @@ function AddProperty() {
               <input
                 type="text"
                 id="location"
-                className="h-[50px] w-1/2 rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none"
+                className="h-[50px] rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none lg:w-1/2"
                 placeholder="Enter Property Name"
               />
             </div>
@@ -62,7 +62,7 @@ function AddProperty() {
               <input
                 type="number"
                 id="builtUpArea"
-                className="h-[50px] w-1/2 rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none"
+                className="h-[50px] rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none lg:w-1/2"
                 placeholder="Enter BuiltUp Area"
               />
             </div>
@@ -73,7 +73,7 @@ function AddProperty() {
               <input
                 type="number"
                 id="price"
-                className="h-[50px] w-1/2 rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none"
+                className="h-[50px] rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none lg:w-1/2"
                 placeholder="Enter Price"
               />
             </div>
@@ -84,7 +84,7 @@ function AddProperty() {
               <input
                 type="number"
                 id="buildYear"
-                className="h-[50px] w-1/2 rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none"
+                className="h-[50px] rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none lg:w-1/2"
                 placeholder="Enter Build Year"
               />
             </div>
@@ -95,7 +95,7 @@ function AddProperty() {
               <input
                 type="number"
                 id="dimension"
-                className="h-[50px] w-1/2 rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none"
+                className="h-[50px] rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none lg:w-1/2"
                 placeholder="Enter Property Name"
               />
             </div>
@@ -107,7 +107,7 @@ function AddProperty() {
               <input
                 type="number"
                 id="bedrooms"
-                className="h-[50px] w-1/2 rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none"
+                className="h-[50px] rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none lg:w-1/2"
                 placeholder="Enter Bedroom Number"
               />
             </div>
@@ -119,7 +119,7 @@ function AddProperty() {
               <input
                 type="number"
                 id="bathrooms"
-                className="h-[50px] w-1/2 rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none"
+                className="h-[50px] rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none lg:w-1/2"
                 placeholder="Enter Bathroom Number"
               />
             </div>
@@ -132,7 +132,7 @@ function AddProperty() {
               <input
                 type="number"
                 id="balcony"
-                className="h-[50px] w-1/2 rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none"
+                className="h-[50px] rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none lg:w-1/2"
                 placeholder="Enter Balcony Number"
               />
             </div>
@@ -148,7 +148,7 @@ function AddProperty() {
                 name="parking"
                 id="parking"
                 defaultValue={"garage"}
-                className="h-[50px] w-1/2 appearance-none rounded-lg border border-[#A4A6AC33] px-3"
+                className="h-[50px] appearance-none rounded-lg border border-[#A4A6AC33] px-3 lg:w-1/2"
               >
                 <option value="Select Parking Category" disabled>
                   Select Parking Category
@@ -171,7 +171,7 @@ function AddProperty() {
                 name="propertyCategory"
                 id="propertyCategory"
                 defaultValue={"apartment"}
-                className="h-[50px] w-1/2 appearance-none rounded-lg border border-[#A4A6AC33] px-3"
+                className="h-[50px] appearance-none rounded-lg border border-[#A4A6AC33] px-3 lg:w-1/2"
               >
                 <option value="Select Property Category" disabled>
                   Select Property Category
@@ -193,7 +193,7 @@ function AddProperty() {
                 name="status"
                 id="status"
                 defaultValue={"available"}
-                className="h-[50px] w-1/2 appearance-none rounded-lg border border-[#A4A6AC33] px-3"
+                className="h-[50px] appearance-none rounded-lg border border-[#A4A6AC33] px-3 lg:w-1/2"
               >
                 <option value="Select Property Category" disabled>
                   Select Status Category
@@ -207,24 +207,10 @@ function AddProperty() {
             </div>
           </div>
 
-          {/* description */}
-          <div className="mb-5 flex flex-col">
-            <label className="mb-2 font-bold" htmlFor="description">
-              Description :
-            </label>
-            <textarea
-              type="text"
-              id="description"
-              className="h-[200px] w-full  rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none"
-              placeholder="Write big description about property"
-            />
-          </div>
-
           {/* amenities */}
 
-          <div className="mb-5 grid grid-cols-3 gap-y-2">
-            <p className="mb-2 font-bold">Amenities:</p>
-
+          <p className="mb-2 font-bold">Amenities:</p>
+          <div className="mb-5 grid gap-y-3 lg:grid-cols-3">
             <div className="flex items-center gap-4">
               <input type="checkbox" id="airConditioning" className="h-5 w-5" />
               <label htmlFor="airConditioning">Air Conditioning</label>
@@ -280,6 +266,54 @@ function AddProperty() {
               <label htmlFor="petFriendly">Pet-Friendly Features</label>
             </div>
           </div>
+          {/* description */}
+          <div className="mb-5 flex flex-col">
+            <label className="mb-2 font-bold" htmlFor="description">
+              Description :
+            </label>
+            <textarea
+              type="text"
+              id="description"
+              className="h-[200px] w-full  rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none"
+              placeholder="Write big description about property"
+            />
+          </div>
+
+          {/* images */}
+
+          <div className="mb-5 grid gap-y-5 lg:grid-cols-2">
+            <div className="mb-5 flex flex-col lg:w-1/2">
+              <label className="mb-2 font-bold" htmlFor="images">
+                Images :
+              </label>
+              <input
+                type="file"
+                id="images"
+                className="h-[50px] w-full rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none"
+                placeholder="Enter Your Name"
+                multiple
+              />
+            </div>
+
+            {/* floor plan images */}
+
+            <div className="mb-5 flex flex-col lg:w-1/2">
+              <label className="mb-2 font-bold" htmlFor="floorPlan">
+                Floor Plan Images :
+              </label>
+              <input
+                type="file"
+                id="floorPlan"
+                className="h-[50px] w-full rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none"
+                placeholder="Enter Your Name"
+                multiple
+              />
+            </div>
+          </div>
+
+          <button className="mx-auto mb-5 flex h-[50px] w-1/2 items-center justify-center rounded-xl bg-primary-500 text-white">
+            Add Property
+          </button>
         </form>
       </div>
     </section>
