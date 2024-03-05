@@ -109,7 +109,7 @@ async function PropertiesDetails({ params }) {
 
           <h6 className=" mb-5 text-xl font-bold">Details</h6>
 
-          <div className="mb-10 flex  justify-between">
+          <div className="mb-10 flex flex-col justify-between  sm:flex-row">
             <div className="flex flex-col gap-2">
               <div className="flex justify-between gap-10">
                 <p className="font-bold">Built Up Area (sqft):</p>
@@ -161,7 +161,7 @@ async function PropertiesDetails({ params }) {
 
           <h6 className=" mb-5 text-xl font-bold">Floor Plan</h6>
 
-          <div className="mb-10 flex gap-5">
+          <div className="mb-10 flex justify-center gap-5">
             {property.floorPlanImages.map((plan, index) => (
               <Image
                 key={index}
@@ -189,7 +189,7 @@ async function PropertiesDetails({ params }) {
 
         {/* left side  */}
         <div className="h-max rounded-lg px-5  lg:w-2/6">
-          <h6 className=" mb-5 text-xl font-bold">Agent Details</h6>
+          <h6 className=" mb-5 text-xl font-bold uppercase">Schedule a tour</h6>
 
           <div className="mb-5 flex items-center gap-5 border-b-2 pb-4 ">
             <Image
@@ -201,7 +201,7 @@ async function PropertiesDetails({ params }) {
             />
 
             <div className="flex flex-col justify-center gap-2">
-              <h6 className="text-2xl font-bold">John Doe</h6>
+              <h6 className="text-2xl font-bold">Leasie Willions</h6>
               <p className="text-gray-500">Real Estate Agent</p>
             </div>
           </div>
@@ -241,7 +241,7 @@ async function PropertiesDetails({ params }) {
             </div>
 
             <button className="rounded-xl bg-primary-500 p-3 text-white">
-              Send Enquiry
+              Send a request
             </button>
           </div>
         </div>
