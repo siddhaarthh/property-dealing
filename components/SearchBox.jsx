@@ -18,7 +18,7 @@ function SearchBox() {
   const [property, setProperty] = useState("Select Property");
 
   return (
-    <div className="absolute -bottom-[35%] right-[5%] flex w-[90%] items-center gap-8 rounded-xl bg-primary-500 p-5 sm:w-[85%] md:-bottom-[8%] md:right-[11%] md:w-[80%]">
+    <div className="absolute -bottom-[40%] right-[5%] flex w-[90%] items-center gap-8 rounded-xl bg-primary-500 p-5  sm:w-[85%] md:-bottom-[8%] md:right-[11%] md:w-[80%]">
       <div className="flex w-full flex-col gap-2 md:flex-row md:gap-2 lg:w-[90%] lg:gap-3">
         <SearchProperty
           src={locationIcon}

@@ -1,4 +1,3 @@
-import BreadCrumb from "@/components/BreadCrumb";
 import { getSingleProperty } from "@/utils/getPropertyHandler";
 import Image from "next/image";
 import selectLocation from "/assets/location-icon-black.svg";
@@ -30,20 +29,6 @@ async function PropertiesDetails({ params }) {
           className="relative h-[300px] w-full object-cover object-center md:h-[500px]"
           priority={true}
         />
-
-        {/* <div className="absolute bottom-[6%] left-[14%] hidden w-[80%] gap-5 lg:flex">
-          {property.images.slice(0, 5).map((image, index) => (
-            <Image
-              key={index}
-              src={`/assets/propertyImages/${image}.jpg`}
-              width={200}
-              height={0}
-              alt="property image"
-              className="h-[125px] rounded-xl object-cover object-center"
-              priority={true}
-            />
-          ))}
-        </div> */}
       </div>
 
       {/* property details */}
@@ -208,35 +193,47 @@ async function PropertiesDetails({ params }) {
 
           <div className="flex flex-col gap-5">
             <div className="w-full">
-              <p className="mb-2 font-bold">Name</p>
+              <label htmlFor="name" className="mb-2 font-bold">
+                Name
+              </label>
               <input
+                id="name"
                 type="text"
                 className="h-[50px] w-full rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none"
                 placeholder="Enter Your Name"
               />
             </div>
             <div className="w-full">
-              <p className="mb-2 font-bold">Email</p>
+              <label htmlFor="email" className="mb-2 font-bold">
+                Email
+              </label>
               <input
+                id="email"
                 type="text"
                 className="h-[50px] w-full rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none"
                 placeholder="Enter Your Email"
               />
             </div>
             <div className="w-full">
-              <p className="mb-2 font-bold">Phone Number</p>
+              <label htmlFor="phoneNumber" className="mb-2 font-bold">
+                Phone Number
+              </label>
               <input
+                id="phoneNumber"
                 type="number"
                 className="h-[50px] w-full rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none"
-                placeholder="Enter Your Name"
+                placeholder="Enter Your Phone Number"
               />
             </div>
             <div className="w-full">
-              <p className="mb-2 font-bold">Message</p>
+              <label htmlFor="message" className="mb-2 font-bold">
+                Message
+              </label>
               <textarea
+                id="message"
                 type="text"
                 className="h-[100px] w-full rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none"
-                placeholder="Enter Your Name"
+                placeholder="Enter Your Message"
               />
             </div>
 
