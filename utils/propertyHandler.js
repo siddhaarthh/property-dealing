@@ -21,7 +21,7 @@ export const createProperty = async (data) => {
   const sendData = JSON.stringify(data);
 
   try {
-    const res = await fetch(`http://localhost:3000/api/properties`, {
+    const res = await fetch(`${process.env.API_URL}/api/properties`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
