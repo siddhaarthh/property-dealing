@@ -6,10 +6,12 @@ const propertySchema = new Schema(
       type: String,
       required: true,
     },
-    propertyImages: {
-      type: [String],
-      required: true,
-    },
+    propertyImages: [
+      {
+        type: String,
+        required: true,
+      },
+    ],
 
     address: {
       type: String,
@@ -71,10 +73,12 @@ const propertySchema = new Schema(
       },
     },
 
-    floorPlanImages: {
-      type: [String],
-      required: true,
-    },
+    floorPlanImages: [
+      {
+        type: String,
+        required: true,
+      },
+    ],
 
     location: {
       type: String,
