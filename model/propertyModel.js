@@ -25,10 +25,12 @@ const propertySchema = new Schema(
       type: String,
       required: true,
     },
-    features: {
-      type: [String],
-      required: true,
-    },
+    features: [
+      {
+        type: String,
+        required: true,
+      },
+    ],
 
     details: {
       builtUpArea: {

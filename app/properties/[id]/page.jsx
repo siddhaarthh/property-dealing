@@ -4,19 +4,12 @@ import selectLocation from "/assets/location-icon-black.svg";
 import favorite from "@/assets/favorite.svg";
 import share from "@/assets/share.svg";
 import plus from "@/assets/plus.svg";
-import BreadCrumb from "@/components/BreadCrumb";
 
 async function PropertiesDetails({ params }) {
   const property = await getSingleProperty(params.id);
 
-  console.log(property);
-
   return (
     <section className="mb-24 px-5 lg:px-0">
-      {/* <div className="mx-auto mb-2 px-3 lg:w-[80%] lg:px-0">
-        <BreadCrumb />
-      </div> */}
-
       {/* property image */}
       <div className="mx-auto mb-5 lg:w-full">
         <Image
@@ -62,7 +55,7 @@ async function PropertiesDetails({ params }) {
 
       {/* property details */}
 
-      <div className="mx-auto flex flex-col gap-20 lg:w-[80%] lg:flex-row">
+      <div className="mx-auto flex flex-col gap-20  lg:w-[80%] lg:flex-row">
         <div className="w-full lg:w-4/6">
           <div className="mb-4 flex  items-center gap-5 border-b-2 pb-3 ">
             <h3 className="text-2xl font-bold">Description</h3>
@@ -71,7 +64,7 @@ async function PropertiesDetails({ params }) {
 
           <h6 className=" mb-5 text-xl font-bold">Details</h6>
 
-          <div className="mb-10 flex flex-col justify-between  sm:flex-row">
+          <div className="mb-10 flex flex-col justify-between   sm:flex-row">
             <div className="flex flex-col gap-2">
               <div className="flex justify-between gap-10">
                 <p className="font-bold">Built Up Area (sqft):</p>
@@ -116,6 +109,66 @@ async function PropertiesDetails({ params }) {
                 <p className="font-bold">Parking</p>
                 <p>{property.details.parking}</p>
               </div>
+            </div>
+          </div>
+
+          {/* Property Images */}
+
+          <h6 className=" mb-5 text-xl font-bold">Property Images</h6>
+
+          <div
+            className={`mx-auto mb-10 grid gap-x-4 gap-y-8 ${property.features.length >= 2 ? "grid-cols-2" : "grid-cols-1"}`}
+          >
+            {property.propertyImages.map((image, index) => (
+              <div
+                key={index}
+                className={`${
+                  property.propertyImages.length === 3 && index === 2
+                    ? "col-span-2"
+                    : "col-span-1"
+                }`}
+              >
+                <Image
+                  key={index}
+                  src={image}
+                  width={0}
+                  height={0}
+                  sizes="100%"
+                  alt="property image"
+                  className=" w-full
+                   rounded-xl object-cover object-center"
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* features */}
+
+          <div>
+            <h6 className="mb-5 text-xl font-bold">Amenities</h6>
+            <div
+              className={`mx-auto mb-10 grid gap-y-8 ${property.features.length >= 3 ? "grid-cols-3" : "grid-col-2"}`}
+            >
+              {property.features.map((feature, index) => {
+                // Extracting the first word from the feature sentence
+                const image = feature.split(" ")[0];
+
+                return (
+                  <div
+                    className=" flex flex-col items-center gap-1 rounded-xl md:w-1/2"
+                    key={index}
+                  >
+                    {/* Using the first word as the filename for the image */}
+                    <Image
+                      src={`/assets/features/${image}.svg`}
+                      height={30}
+                      width={30}
+                      alt="images"
+                    />
+                    <p>{feature}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
