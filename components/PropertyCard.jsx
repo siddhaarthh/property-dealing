@@ -3,18 +3,18 @@ import React from "react";
 import bed from "@/assets/bed.svg";
 import bath from "@/assets/bath.svg";
 import parking from "@/assets/parking.svg";
-import user from "@/assets/user.svg";
 import plus from "@/assets/plus.svg";
 import favorite from "@/assets/favorite.svg";
 import share from "@/assets/share.svg";
 import Link from "next/link";
 
 function PropertyCard({ property }) {
+  console.log(property);
   return (
     <div className=" flex h-max flex-col items-center gap-3 rounded-2xl bg-white p-5 shadow-md ">
       <Link href={`/properties/${property._id}`}>
         <Image
-          src={`/assets/propertyImages/${property.images[1]}.jpg`}
+          src={property.propertyImages[0]}
           width={400}
           height={500}
           alt="property image"
@@ -38,7 +38,9 @@ function PropertyCard({ property }) {
             </div>
             <div className="flex items-center gap-3">
               <Image src={parking} width={25} height={0} alt="car icon" />
-              <span className="text-lg">{property.details.parking}</span>
+              <span className="text-lg capitalize">
+                {property.details.parking}
+              </span>
             </div>
           </div>
         </div>
@@ -46,8 +48,14 @@ function PropertyCard({ property }) {
 
       <div className="flex w-full justify-between px-2">
         <div className="flex items-center gap-3">
-          <Image src={user} width={40} height={40} alt="user picture" />
-          <span>Alexa Mate</span>
+          <Image
+            src={property.user.image}
+            width={40}
+            height={40}
+            alt="user picture"
+            className="rounded-full"
+          />
+          <span>{property.owner.name}</span>
         </div>
 
         <div className="flex items-center gap-2">

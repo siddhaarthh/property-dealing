@@ -9,16 +9,18 @@ import BreadCrumb from "@/components/BreadCrumb";
 async function PropertiesDetails({ params }) {
   const property = await getSingleProperty(params.id);
 
+  console.log(property);
+
   return (
     <section className="mb-24 px-5 lg:px-0">
-      <div className="mx-auto mb-2 px-3 lg:w-[80%] lg:px-0">
+      {/* <div className="mx-auto mb-2 px-3 lg:w-[80%] lg:px-0">
         <BreadCrumb />
-      </div>
+      </div> */}
 
       {/* property image */}
       <div className="mx-auto mb-5 lg:w-full">
         <Image
-          src={`/assets/propertyImages/image2.jpg`}
+          src={property.propertyImages[1]}
           height={0}
           width={1200}
           alt="property image"
@@ -65,18 +67,7 @@ async function PropertiesDetails({ params }) {
           <div className="mb-4 flex  items-center gap-5 border-b-2 pb-3 ">
             <h3 className="text-2xl font-bold">Description</h3>
           </div>
-          <p className="mb-10 text-justify">
-            Escape to a haven of tranquility in this charming cabin retreat,
-            enveloped by the majesty of nature. Surrounded by towering trees and
-            verdant foliage, immerse yourself in the symphony of birdsong and
-            rustling leaves. Wander along meandering forest paths or bask in the
-            warmth of the sun-dappled deck. Inside, the crackling fireplace
-            beckons you to unwind with a good book, while the inviting ambiance
-            of the outdoor hot tub promises rejuvenation under the starlit sky.
-            Whether seeking solace in solitude or shared moments with loved
-            ones, this idyllic woodland sanctuary offers the perfect respite
-            from the demands of modern life.
-          </p>
+          <p className="mb-10 text-justify">{property.description}</p>
 
           <h6 className=" mb-5 text-xl font-bold">Details</h6>
 
@@ -90,7 +81,7 @@ async function PropertiesDetails({ params }) {
                 <p className="font-bold">Carpet Area (sqft):</p>
                 <p>{property.details.carpetArea}</p>
               </div>
-              <div className="flex justify-between gap-10">
+              <div className="flex justify-between gap-10 capitalize">
                 <p className="font-bold">Property Category:</p>
                 <p>{property.details.propertyCategory}</p>
               </div>
@@ -104,7 +95,7 @@ async function PropertiesDetails({ params }) {
               </div>
             </div>
 
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 capitalize">
               <div className="flex justify-between gap-10">
                 <p className="font-bold">Bedrooms:</p>
                 <p>{property.details.bedrooms}</p>
@@ -136,7 +127,7 @@ async function PropertiesDetails({ params }) {
             {property.floorPlanImages.map((plan, index) => (
               <Image
                 key={index}
-                src={`/assets/propertyImages/floorplan2.jpg`}
+                src={plan}
                 width={0}
                 height={0}
                 sizes="100%"
