@@ -1,23 +1,19 @@
-import { getSingleProperty } from "@/utils/getPropertyHandler";
+import { getSingleProperty } from "@/utils/propertyHandler";
 import Image from "next/image";
 import selectLocation from "/assets/location-icon-black.svg";
 import favorite from "@/assets/favorite.svg";
 import share from "@/assets/share.svg";
 import plus from "@/assets/plus.svg";
-
-import React from "react";
-import { propertyDetails } from "@/constants/constant";
-import Link from "next/link";
+import BreadCrumb from "@/components/BreadCrumb";
 
 async function PropertiesDetails({ params }) {
   const property = await getSingleProperty(params.id);
 
   return (
     <section className="mb-24 px-5 lg:px-0">
-      {/* bread crumbs */}
-      {/* <div className="mx-auto mb-2 px-3 lg:w-[80%] lg:px-0">
+      <div className="mx-auto mb-2 px-3 lg:w-[80%] lg:px-0">
         <BreadCrumb />
-      </div> */}
+      </div>
 
       {/* property image */}
       <div className="mx-auto mb-5 lg:w-full">
@@ -26,16 +22,16 @@ async function PropertiesDetails({ params }) {
           height={0}
           width={1200}
           alt="property image"
-          className="relative h-[300px] w-full object-cover object-center md:h-[500px]"
+          className="relative h-[300px] w-full rounded-xl object-cover object-center md:h-[500px] md:rounded-none"
           priority={true}
         />
       </div>
 
       {/* property details */}
       <div className="mx-auto mb-10 flex flex-col gap-2 lg:w-[80%] lg:flex-row">
-        <div className="flex w-full flex-col justify-center gap-2">
+        <div className="mb-2 flex w-full flex-col justify-center gap-2 md:mb-0">
           <h4 className=" font-playfair text-3xl">{property.name}</h4>
-          <div className="mb-2 flex items-center gap-2">
+          <div className="flex items-center gap-2">
             <Image
               src={selectLocation}
               width={20}
@@ -67,17 +63,7 @@ async function PropertiesDetails({ params }) {
       <div className="mx-auto flex flex-col gap-20 lg:w-[80%] lg:flex-row">
         <div className="w-full lg:w-4/6">
           <div className="mb-4 flex  items-center gap-5 border-b-2 pb-3 ">
-            {propertyDetails.map((detail, index) => {
-              return (
-                <Link
-                  className=" text-xl font-bold "
-                  key={index}
-                  href={detail.path}
-                >
-                  {detail.name}
-                </Link>
-              );
-            })}
+            <h3 className="text-2xl font-bold">Description</h3>
           </div>
           <p className="mb-10 text-justify">
             Escape to a haven of tranquility in this charming cabin retreat,

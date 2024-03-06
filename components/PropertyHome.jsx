@@ -2,7 +2,7 @@ import Image from "next/image";
 import leftArrow from "@/assets/arrow-right-black.svg";
 import rightArrow from "@/assets/arrow-right-white.svg";
 import PropertyCard from "./PropertyCard";
-import { getPropertyHandler } from "@/utils/getPropertyHandler";
+import { getPropertyHandler } from "@/utils/propertyHandler";
 
 async function PropertyHome() {
   const data = await getPropertyHandler();
