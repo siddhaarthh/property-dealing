@@ -117,16 +117,16 @@ async function PropertiesDetails({ params }) {
           <h6 className=" mb-5 text-xl font-bold">Property Images</h6>
 
           <div
-            className={`mx-auto mb-10 grid gap-x-4 gap-y-8 ${property.features.length >= 2 ? "grid-cols-2" : "grid-cols-1"}`}
+            className={`mx-auto mb-10 grid gap-x-4 gap-y-4 ${property.features.length >= 2 ? "grid-cols-2" : "grid-cols-1"}`}
           >
             {property.propertyImages.map((image, index) => (
               <div
                 key={index}
-                className={`${
+                className={` ${
                   property.propertyImages.length === 3 && index === 2
                     ? "col-span-2"
                     : "col-span-1"
-                }`}
+                } `}
               >
                 <Image
                   key={index}

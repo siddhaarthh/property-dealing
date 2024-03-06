@@ -11,6 +11,7 @@ function AddProperty() {
   const { data: session } = useSession();
 
   const User = session?.user;
+
   const onSubmit = async (data, e) => {
     e.preventDefault();
 
@@ -20,7 +21,7 @@ function AddProperty() {
     const propertyImage64 = await changeTo64(propertyImage);
     const floorImage64 = await changeTo64(floorPlanImage);
 
-    // data for property model
+    // Prepare property data
     const propertyData = {
       name: data.propertyName,
       propertyImages: [...propertyImage64],
@@ -40,24 +41,29 @@ function AddProperty() {
         carpetArea: `${data.carpetArea} sqft`,
         status: data.status,
       },
-
       floorPlanImages: [...floorImage64],
       location: data.location,
-
       owner: {
         name: data.ownerName,
         contact: Number(data.ownerContact),
         email: data.ownerEmail,
         address: data.ownerAddress,
       },
-
       user: {
         id: User.id,
         image: User.image,
       },
     };
 
-    createProperty(propertyData);
+    try {
+      // Call createProperty function to add new property
+      await createProperty(propertyData);
+      console.log("Property created successfully:", propertyData);
+    } catch (error) {
+      // Handle any errors that occur during property creation
+      console.error("Error creating property:", error);
+      alert("Failed to add property. Please try again later.");
+    }
   };
 
   return (
