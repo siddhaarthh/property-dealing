@@ -27,7 +27,7 @@ function AddProperty() {
       address: data.address,
       price: Number(data.price),
       description: data.description,
-      features: data.features.join(", "),
+      features: [...data.features],
       details: {
         builtUpArea: `${data.builtUpArea} sqft`,
         dimensions: `${data.dimensions} ft`,
@@ -319,10 +319,10 @@ function AddProperty() {
                 type="checkbox"
                 id="garden"
                 className="h-5 w-5"
-                value="Garden or Outdoor Space"
+                value="Garden"
                 {...register("features")}
               />
-              <label htmlFor="garden">Garden or Outdoor Space</label>
+              <label htmlFor="garden">Garden</label>
             </div>
             <div className="flex items-center gap-4">
               <input
@@ -337,14 +337,12 @@ function AddProperty() {
             <div className="flex items-center gap-4">
               <input
                 type="checkbox"
-                id="highSpeedInternet"
+                id="wifi"
                 className="h-5 w-5"
-                value="High-Speed Internet Access"
+                value="Wifi"
                 {...register("features")}
               />
-              <label htmlFor="highSpeedInternet">
-                High-Speed Internet Access
-              </label>
+              <label htmlFor="wifi">Wifi</label>
             </div>
             <div className="flex items-center gap-4">
               <input
@@ -361,50 +359,50 @@ function AddProperty() {
                 type="checkbox"
                 id="gym"
                 className="h-5 w-5"
-                value="Gym or Fitness Facilities"
+                value="Gym"
                 {...register("features")}
               />
-              <label htmlFor="gym">Gym or Fitness Facilities</label>
+              <label htmlFor="gym">Gym</label>
             </div>
             <div className="flex items-center gap-4">
               <input
                 type="checkbox"
-                id="balconyFeatures"
+                id="water"
                 className="h-5 w-5"
-                value="Balcony or Terrace"
+                value="24 Hours Water"
                 {...register("features")}
               />
-              <label htmlFor="balconyFeatures">Balcony or Terrace</label>
+              <label htmlFor="water">24 Hours Water</label>
             </div>
             <div className="flex items-center gap-4">
               <input
                 type="checkbox"
-                id="elevator"
+                id="lift"
                 className="h-5 w-5"
-                value="Elevator"
+                value="Private Lift"
                 {...register("features")}
               />
-              <label htmlFor="elevator">Elevator</label>
+              <label htmlFor="lift">Private Lift</label>
             </div>
             <div className="flex items-center gap-4">
               <input
                 type="checkbox"
-                id="laundry"
+                id="indoor"
                 className="h-5 w-5"
-                value="Laundry Facilities"
+                value="Indoor Games"
                 {...register("features")}
               />
-              <label htmlFor="laundry">Laundry Facilities</label>
+              <label htmlFor="indoor">Indoor Games</label>
             </div>
             <div className="flex items-center gap-4">
               <input
                 type="checkbox"
                 id="petFriendly"
                 className="h-5 w-5"
-                value="Pet-Friendly Features"
+                value="Pet-Friendly"
                 {...register("features")}
               />
-              <label htmlFor="petFriendly">Pet-Friendly Features</label>
+              <label htmlFor="petFriendly">Pet-Friendly</label>
             </div>
           </div>
           {/* description */}

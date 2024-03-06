@@ -9,7 +9,6 @@ import share from "@/assets/share.svg";
 import Link from "next/link";
 
 function PropertyCard({ property }) {
-  console.log(property);
   return (
     <div className=" flex h-max flex-col items-center gap-3 rounded-2xl bg-white p-5 shadow-md ">
       <Link href={`/properties/${property._id}`}>
