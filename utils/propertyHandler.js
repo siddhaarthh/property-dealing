@@ -58,7 +58,7 @@ export const createProperty = async (data) => {
     });
 
     // Parse the JSON response and return data
-    return console.log(res);
+    return res;
   } catch (error) {
     // Handle any errors that occur during the fetch operation or JSON parsing
     throw new Error(`Error creating property: ${error.message}`);
