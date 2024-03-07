@@ -5,15 +5,25 @@ import { useForm } from "react-hook-form";
 import { useSession } from "next-auth/react";
 import { createProperty } from "@/utils/propertyHandler";
 import { changeTo64 } from "@/utils/helperFunction";
+import { useRouter } from "next/navigation";
+import { set } from "mongoose";
 
 function AddProperty() {
   const { register, handleSubmit } = useForm();
   const { data: session } = useSession();
+  const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
 
   const User = session?.user;
 
   const onSubmit = async (data, e) => {
     e.preventDefault();
+
+    const form = e.target;
+
+    const formData = new FormData(form);
+
+    console.log(formData);
 
     const propertyImage = data.propertyImages;
     const floorPlanImage = data.floorPlanImages;
@@ -57,8 +67,12 @@ function AddProperty() {
 
     try {
       // Call createProperty function to add new property
-      await createProperty(propertyData);
+      setIsLoading(true);
+      const res = await createProperty(propertyData);
+      setIsLoading(false);
       console.log("Property created successfully:", propertyData);
+      console.log(res);
+      router.push(res.url);
     } catch (error) {
       // Handle any errors that occur during property creation
       console.error("Error creating property:", error);
@@ -513,7 +527,10 @@ function AddProperty() {
             </div>
           </div>
 
-          <button className="mx-auto mb-5 flex h-[50px] w-1/2 items-center justify-center rounded-xl bg-primary-500 text-white">
+          <button
+            disabled={isLoading}
+            className={`mx-auto mb-5 flex h-[50px] w-1/2 items-center justify-center rounded-xl ${!isLoading ? "bg-primary-500" : "bg-gray-500"}  text-white`}
+          >
             Add Property
           </button>
         </form>

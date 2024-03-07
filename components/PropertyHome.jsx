@@ -16,7 +16,7 @@ async function PropertyHome() {
       </div>
 
       <div className="grid-col-1 grid gap-10 px-5 md:grid-cols-2 lg:px-0 xl:grid-cols-3">
-        {data.map((property) => (
+        {data.slice(0, 6).map((property) => (
           <PropertyCard key={property._id} property={property} />
         ))}
       </div>
