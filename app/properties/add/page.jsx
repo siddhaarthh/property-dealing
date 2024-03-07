@@ -6,7 +6,6 @@ import { useSession } from "next-auth/react";
 import { createProperty } from "@/utils/propertyHandler";
 import { changeTo64 } from "@/utils/helperFunction";
 import { useRouter } from "next/navigation";
-import { set } from "mongoose";
 
 function AddProperty() {
   const { register, handleSubmit } = useForm();
@@ -18,12 +17,6 @@ function AddProperty() {
 
   const onSubmit = async (data, e) => {
     e.preventDefault();
-
-    const form = e.target;
-
-    const formData = new FormData(form);
-
-    console.log(formData);
 
     const propertyImage = data.propertyImages;
     const floorPlanImage = data.floorPlanImages;
