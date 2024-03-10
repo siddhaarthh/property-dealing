@@ -31,7 +31,7 @@ function AddProperty() {
       address: data.address,
       price: Number(data.price),
       description: data.description,
-      features: [...data.features],
+      amenities: [...data.features],
       details: {
         builtUpArea: `${data.builtUpArea} sqft`,
         dimensions: `${data.dimensions} ft`,
@@ -56,6 +56,7 @@ function AddProperty() {
         id: User.id,
         image: User.image,
       },
+      creatorId: User.id,
     };
 
     try {

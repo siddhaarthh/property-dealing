@@ -6,6 +6,11 @@ const propertySchema = new Schema(
       type: String,
       required: true,
     },
+    creatorId: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
     propertyImages: [
       {
         type: String,
@@ -25,7 +30,7 @@ const propertySchema = new Schema(
       type: String,
       required: true,
     },
-    features: [
+    amenities: [
       {
         type: String,
         required: true,

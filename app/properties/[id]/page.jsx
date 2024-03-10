@@ -117,7 +117,7 @@ async function PropertiesDetails({ params }) {
           <h6 className=" mb-5 text-xl font-bold">Property Images</h6>
 
           <div
-            className={`mx-auto mb-10 grid gap-x-4 gap-y-4 ${property.features.length >= 2 ? "grid-cols-2" : "grid-cols-1"}`}
+            className={`mx-auto mb-10 grid gap-x-4 gap-y-4 ${property.amenities.length >= 2 ? "grid-cols-2" : "grid-cols-1"}`}
           >
             {property.propertyImages.map((image, index) => (
               <div
@@ -147,11 +147,11 @@ async function PropertiesDetails({ params }) {
           <div>
             <h6 className="mb-5 text-xl font-bold">Amenities</h6>
             <div
-              className={`mx-auto mb-10 grid gap-y-8 ${property.features.length >= 3 ? "grid-cols-3" : "grid-col-2"}`}
+              className={`mx-auto mb-10 grid gap-y-8 ${property?.amenities?.length >= 3 ? "grid-cols-3" : "grid-col-2"}`}
             >
-              {property.features.map((feature, index) => {
+              {property?.amenities?.map((amenities, index) => {
                 // Extracting the first word from the feature sentence
-                const image = feature.split(" ")[0];
+                const image = amenities.split(" ")[0];
 
                 return (
                   <div
@@ -165,7 +165,7 @@ async function PropertiesDetails({ params }) {
                       width={30}
                       alt="images"
                     />
-                    <p>{feature}</p>
+                    <p>{amenities}</p>
                   </div>
                 );
               })}
@@ -176,17 +176,29 @@ async function PropertiesDetails({ params }) {
 
           <h6 className=" mb-5 text-xl font-bold">Floor Plan</h6>
 
-          <div className="mb-10 flex justify-center gap-5">
-            {property.floorPlanImages.map((plan, index) => (
-              <Image
+          <div
+            className={`mx-auto mb-10 grid gap-x-4 gap-y-4 ${property.floorPlanImages.length >= 2 ? "grid-cols-2" : "grid-cols-1"}`}
+          >
+            {property.floorPlanImages.map((image, index) => (
+              <div
                 key={index}
-                src={plan}
-                width={0}
-                height={0}
-                sizes="100%"
-                alt="property image"
-                className="w-1/2 rounded-xl object-cover object-center"
-              />
+                className={` ${
+                  property.floorPlanImages.length === 3 && index === 2
+                    ? "col-span-2"
+                    : "col-span-1"
+                } `}
+              >
+                <Image
+                  key={index}
+                  src={image}
+                  width={0}
+                  height={0}
+                  sizes="100%"
+                  alt="property image"
+                  className=" w-full
+                   rounded-xl object-cover object-center"
+                />
+              </div>
             ))}
           </div>
 

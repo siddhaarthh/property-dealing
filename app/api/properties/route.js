@@ -71,6 +71,8 @@ export const POST = async (request) => {
     // Create new property with updated data
     const property = await Property.create(data);
 
+    console.log(data);
+
     // Redirect to property page with newly created property ID
     return Response.redirect(
       `http://localhost:3000/properties/${property._id}`,
