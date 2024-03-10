@@ -1,6 +1,8 @@
 "use client";
 import { useSession } from "next-auth/react";
 import React, { useEffect, useState } from "react";
+import PropertyPagePropertyCard from "./PropertyPagePropertyCard";
+import { deleteProperty } from "@/utils/propertyHandler";
 
 function ProfileProperties() {
   const { data: session } = useSession();
@@ -38,7 +40,26 @@ function ProfileProperties() {
     if (session?.user?.id) fetchUserProperties(session.user.id);
   }, [session]);
 
-  return <div>ProfileProperties</div>;
+  return (
+    <div className="flex flex-col gap-5">
+      {properties.map((property) => (
+        <PropertyPagePropertyCard key={property._id} property={property}>
+          {/* <Buttons /> */}
+          <div className="flex items-center gap-5">
+            <button className="rounded-lg bg-primary-500 px-3 py-1 text-white">
+              Edit
+            </button>
+            <button
+              onClick={() => deleteProperty(property._id)}
+              className="rounded-lg bg-primary-500 px-3 py-1   text-white"
+            >
+              Delete
+            </button>
+          </div>
+        </PropertyPagePropertyCard>
+      ))}
+    </div>
+  );
 }
 
 export default ProfileProperties;

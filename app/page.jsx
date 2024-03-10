@@ -15,7 +15,7 @@ export default function Home() {
       <PropertyHome />
       <Feature />
       <OurAgents />
-      <Reviews />
+      {/* <Reviews /> */}
     </main>
   );
 }

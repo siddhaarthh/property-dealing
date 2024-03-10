@@ -4,6 +4,7 @@ import selectLocation from "/assets/location-icon-black.svg";
 import favorite from "@/assets/favorite.svg";
 import share from "@/assets/share.svg";
 import plus from "@/assets/plus.svg";
+import Buttons from "@/components/Buttons";
 
 async function PropertiesDetails({ params }) {
   const property = await getSingleProperty(params.id);
@@ -41,15 +42,7 @@ async function PropertiesDetails({ params }) {
 
         {/* buttons */}
         <div className="flex items-center gap-2 self-start">
-          <button className="rounded-lg border bg-[#a4a6ac0e]  p-[6px]">
-            <Image src={plus} width={35} height={35} alt="plus icon" />
-          </button>
-          <button className="rounded-lg border bg-[#a4a6ac0e] p-2">
-            <Image src={favorite} width={30} height={30} alt="plus icon" />
-          </button>
-          <button className="rounded-lg border bg-[#a4a6ac0e] p-2">
-            <Image src={share} width={30} height={30} alt="plus icon" />
-          </button>
+          <Buttons />
         </div>
       </div>
 

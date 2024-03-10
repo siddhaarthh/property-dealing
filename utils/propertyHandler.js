@@ -64,3 +64,28 @@ export const createProperty = async (data) => {
     throw new Error(`Error creating property: ${error.message}`);
   }
 };
+
+export const deleteProperty = async (id) => {
+  // const confirm = window.confirm(
+  //   "Are you sure you want to delete this property?",
+  // );
+
+  // if (!confirm) return;
+
+  try {
+    const res = await fetch(`http://localhost:3000/api/properties/${id}`, {
+      method: "DELETE",
+    });
+
+    // Check if the response status is within the success range
+    if (!res.ok) {
+      throw new Error(`Failed to delete property: ${res.status}`);
+    }
+
+    // Redirect to the properties page
+    return console.log(res);
+  } catch (error) {
+    // Handle any errors that occur during the fetch operation or JSON parsing
+    throw new Error(`Error deleting property: ${error.message}`);
+  }
+};

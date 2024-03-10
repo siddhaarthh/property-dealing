@@ -64,8 +64,6 @@ function AddProperty() {
       setIsLoading(true);
       const res = await createProperty(propertyData);
       setIsLoading(false);
-      console.log("Property created successfully:", propertyData);
-      console.log(res);
       router.push(res.url);
     } catch (error) {
       // Handle any errors that occur during property creation
@@ -92,7 +90,7 @@ function AddProperty() {
                 id="propertyName"
                 className="h-[50px] rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none lg:w-1/2"
                 placeholder="Enter Property Name"
-                {...register("propertyName", { required: true })}
+                {...register("propertyName", { required: true, maxLength: 80 })}
               />
             </div>
             <div className="flex flex-col">

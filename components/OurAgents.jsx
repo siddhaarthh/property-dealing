@@ -8,7 +8,7 @@ import pattern from "@/assets/pattern.svg";
 
 function OurAgents() {
   return (
-    <section className="relative mx-auto  flex  w-[90%]  flex-col gap-10 xl:w-[80%] ">
+    <section className="relative mx-auto mb-24  flex  w-[90%]  flex-col gap-10 xl:w-[80%] ">
       <div className="self-center  md:self-start">
         <h3 className="mb-1 font-playfair text-[40px] font-bold">Our Agents</h3>
 

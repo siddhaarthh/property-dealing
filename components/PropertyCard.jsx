@@ -7,6 +7,7 @@ import plus from "@/assets/plus.svg";
 import favorite from "@/assets/favorite.svg";
 import share from "@/assets/share.svg";
 import Link from "next/link";
+import Buttons from "./Buttons";
 
 function PropertyCard({ property }) {
   return (
@@ -57,17 +58,7 @@ function PropertyCard({ property }) {
           <span>{property.owner.name}</span>
         </div>
 
-        <div className="flex items-center gap-2">
-          <button className="rounded-xl border bg-[#a4a6ac0f]  p-[6px]">
-            <Image src={plus} width={30} height={30} alt="plus icon" />
-          </button>
-          <button className="rounded-xl border bg-[#a4a6ac0f] p-2">
-            <Image src={favorite} width={25} height={25} alt="plus icon" />
-          </button>
-          <button className="rounded-xl border bg-[#a4a6ac0f] p-2">
-            <Image src={share} width={25} height={25} alt="plus icon" />
-          </button>
-        </div>
+        <Buttons />
       </div>
     </div>
   );

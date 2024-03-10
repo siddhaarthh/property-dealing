@@ -10,7 +10,7 @@ async function Profile() {
   return (
     <section className="relative mx-auto mb-10 w-full  xl:w-[80%]">
       <div className="flex gap-5 p-4">
-        <div className="w-[20%] rounded-lg bg-primary-500 p-4">
+        <div className="w-[20%] rounded-lg p-4">
           <div className="flex flex-col items-center gap-2">
             <div className="rounded-full">
               <Image
@@ -22,14 +22,16 @@ async function Profile() {
                 priority={true}
               />
             </div>
-            <div className="text-center text-xl text-white">
+            <div className="text-center text-xl">
               <p>{user.name}</p>
               <p>{user.email}</p>
             </div>
           </div>
         </div>
-        <div className="w-[80%] rounded-lg border-2 border-primary-500 p-4 shadow-lg">
-          <h3 className="text-lg font-semibold uppercase">Your Listings</h3>
+        <div className="w-[80%]  p-4">
+          <h3 className="mb-5 text-lg font-semibold uppercase">
+            Your Listings
+          </h3>
           <ProfileProperties />
         </div>
       </div>
