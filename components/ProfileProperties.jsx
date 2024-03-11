@@ -3,8 +3,10 @@ import { useSession } from "next-auth/react";
 import React, { useEffect, useState } from "react";
 import PropertyPagePropertyCard from "./PropertyPagePropertyCard";
 import { deleteProperty } from "@/utils/propertyHandler";
+import { useRouter } from "next/navigation";
 
 function ProfileProperties() {
+  const router = useRouter();
   const { data: session } = useSession();
 
   const [properties, setProperties] = useState([]);
@@ -46,7 +48,10 @@ function ProfileProperties() {
         <PropertyPagePropertyCard key={property._id} property={property}>
           {/* <Buttons /> */}
           <div className="flex items-center gap-5">
-            <button className="rounded-lg bg-primary-500 px-3 py-1 text-white">
+            <button
+              className="rounded-lg bg-primary-500 px-3 py-1 text-white"
+              onClick={() => router.push(`/properties/${property._id}/edit`)}
+            >
               Edit
             </button>
             <button

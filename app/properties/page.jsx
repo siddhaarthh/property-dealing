@@ -5,8 +5,6 @@ import PropertyPagePropertyCard from "@/components/PropertyPagePropertyCard";
 import { getPropertyHandler } from "@/utils/propertyHandler";
 import Buttons from "@/components/Buttons";
 
-export const dynamic = "next/dynamic";
-
 async function Properties() {
   const property = await getPropertyHandler();
 

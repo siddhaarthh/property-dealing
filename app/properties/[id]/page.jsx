@@ -1,9 +1,6 @@
 import { getSingleProperty } from "@/utils/propertyHandler";
 import Image from "next/image";
 import selectLocation from "/assets/location-icon-black.svg";
-import favorite from "@/assets/favorite.svg";
-import share from "@/assets/share.svg";
-import plus from "@/assets/plus.svg";
 import Buttons from "@/components/Buttons";
 
 async function PropertiesDetails({ params }) {

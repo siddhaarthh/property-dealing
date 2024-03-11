@@ -1,8 +1,10 @@
 import ProfileProperties from "@/components/ProfileProperties";
+import Spinner from "@/components/Spinner";
 import { authOptions } from "@/utils/authOption";
 import { getServerSession } from "next-auth";
 
 import Image from "next/image";
+import { Suspense } from "react";
 
 async function Profile() {
   const { user } = await getServerSession(authOptions);
@@ -32,7 +34,9 @@ async function Profile() {
           <h3 className="mb-5 text-lg font-semibold uppercase">
             Your Listings
           </h3>
-          <ProfileProperties />
+          <Suspense fallback={<Spinner />}>
+            <ProfileProperties />
+          </Suspense>
         </div>
       </div>
     </section>

@@ -523,7 +523,7 @@ function AddProperty() {
             disabled={isLoading}
             className={`mx-auto mb-5 flex h-[50px] w-1/2 items-center justify-center rounded-xl ${!isLoading ? "bg-primary-500" : "bg-gray-500"}  text-white`}
           >
-            Add Property
+            {isLoading ? "Adding Please Wait.." : "Add Property"}
           </button>
         </form>
       </div>

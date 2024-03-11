@@ -5,7 +5,6 @@ import bath from "@/assets/bath.svg";
 import parking from "@/assets/parking.svg";
 
 import Link from "next/link";
-import Buttons from "./Buttons";
 
 function PropertyPagePropertyCard({ property, children }) {
   return (
