@@ -33,8 +33,10 @@ function PropertyEditForm() {
         // Set default values for form fields
         setValue("propertyName", propertyData.name);
         setValue("price", propertyData.price);
-        setValue("address", propertyData.address);
-        setValue("location", propertyData.location);
+        setValue("street", propertyData.location.street);
+        setValue("city", propertyData.location.city);
+        setValue("state", propertyData.location.state);
+        setValue("zipcode", parseInt(propertyData.location.zipcode));
         setValue("builtUpArea", parseInt(propertyData.details.builtUpArea));
         setValue("carpetArea", parseInt(propertyData.details.carpetArea));
         setValue("buildYear", parseInt(propertyData.details.builtYear));
@@ -60,7 +62,6 @@ function PropertyEditForm() {
 
     const propertyData = {
       name: data.propertyName,
-      address: data.address,
       price: Number(data.price),
       description: data.description,
       amenities: [...data.amenities],
@@ -76,7 +77,12 @@ function PropertyEditForm() {
         carpetArea: `${data.carpetArea} sqft`,
         status: data.status,
       },
-      location: data.location,
+      location: {
+        street: data.street,
+        city: data.city,
+        state: data.state,
+        zipcode: Number(data.zipcode),
+      },
     };
 
     const res = await updateProperty(id, propertyData);
@@ -116,28 +122,56 @@ function PropertyEditForm() {
           />
         </div>
         <div className="flex flex-col">
-          <label className="mb-2 font-bold" htmlFor="address">
-            Address :
+          <label className="mb-2 font-bold" htmlFor="location">
+            Street :
           </label>
           <input
             type="text"
-            name="address"
-            id="address"
+            id="street"
+            name="street"
             className="h-[50px] rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none lg:w-1/2"
-            placeholder="Enter Address"
-            {...register("address", { required: true })}
+            placeholder="Enter Street name"
+            {...register("street", { required: true })}
           />
         </div>
         <div className="flex flex-col">
           <label className="mb-2 font-bold" htmlFor="location">
-            Location :
+            City :
           </label>
           <input
             type="text"
-            id="location"
+            id="city"
+            name="city"
             className="h-[50px] rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none lg:w-1/2"
-            placeholder="Enter Location"
-            {...register("location", { required: true })}
+            placeholder="Enter City"
+            {...register("city", { required: true })}
+          />
+        </div>
+        <div className="flex flex-col">
+          <label className="mb-2 font-bold" htmlFor="location">
+            State :
+          </label>
+          <input
+            type="text"
+            id="state"
+            name="state"
+            className="h-[50px] rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none lg:w-1/2"
+            placeholder="Enter State"
+            {...register("state", { required: true })}
+          />
+        </div>
+
+        <div className="flex flex-col">
+          <label className="mb-2 font-bold" htmlFor="location">
+            Zipcode :
+          </label>
+          <input
+            type="number"
+            id="zipcode"
+            name="zipcode"
+            className="h-[50px] rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none lg:w-1/2"
+            placeholder="Enter Zipcode"
+            {...register("zipcode", { required: true })}
           />
         </div>
 
