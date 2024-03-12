@@ -66,7 +66,6 @@ function AddProperty() {
       setIsLoading(true);
       const res = await createProperty(propertyData);
 
-      console.log(res);
       setIsLoading(false);
       router.push(res.url);
     } catch (error) {

@@ -7,8 +7,6 @@ import PropertyMap from "@/components/Propertymap";
 async function PropertiesDetails({ params }) {
   const property = await getSingleProperty(params.id);
 
-  console.log(property);
-
   return (
     <section className="mb-24 px-5 lg:px-0">
       {/* property image */}
