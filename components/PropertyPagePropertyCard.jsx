@@ -57,7 +57,7 @@ function PropertyPagePropertyCard({ property, children }) {
               alt="user picture"
               className="rounded-full"
             />
-            <span>{property.owner.name}</span>
+            <span>{property?.user?.name}</span>
           </div>
 
           {children}

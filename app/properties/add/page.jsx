@@ -28,7 +28,6 @@ function AddProperty() {
     const propertyData = {
       name: data.propertyName,
       propertyImages: [...propertyImage64],
-      address: data.address,
       price: Number(data.price),
       description: data.description,
       amenities: [...data.features],
@@ -45,17 +44,20 @@ function AddProperty() {
         status: data.status,
       },
       floorPlanImages: [...floorImage64],
-      location: data.location,
-      owner: {
-        name: data.ownerName,
-        contact: Number(data.ownerContact),
-        email: data.ownerEmail,
-        address: data.ownerAddress,
+      location: {
+        street: data.street,
+        city: data.city,
+        state: data.state,
+        zipcode: Number(data.zipcode),
       },
+
       user: {
         id: User.id,
         image: User.image,
+        name: User.name,
+        email: User.email,
       },
+
       creatorId: User.id,
     };
 
@@ -63,6 +65,8 @@ function AddProperty() {
       // Call createProperty function to add new property
       setIsLoading(true);
       const res = await createProperty(propertyData);
+
+      console.log(res);
       setIsLoading(false);
       router.push(res.url);
     } catch (error) {
@@ -105,28 +109,58 @@ function AddProperty() {
                 {...register("price", { required: true })}
               />
             </div>
+
             <div className="flex flex-col">
-              <label className="mb-2 font-bold" htmlFor="address">
-                Address :
+              <label className="mb-2 font-bold" htmlFor="location">
+                Street :
               </label>
               <input
                 type="text"
-                id="address"
+                id="street"
+                name="street"
                 className="h-[50px] rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none lg:w-1/2"
-                placeholder="Enter Address"
-                {...register("address", { required: true })}
+                placeholder="Enter Street name"
+                {...register("street", { required: true })}
               />
             </div>
             <div className="flex flex-col">
               <label className="mb-2 font-bold" htmlFor="location">
-                Location :
+                City :
               </label>
               <input
                 type="text"
-                id="location"
+                id="city"
+                name="city"
                 className="h-[50px] rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none lg:w-1/2"
-                placeholder="Enter Location"
-                {...register("location", { required: true })}
+                placeholder="Enter City"
+                {...register("city", { required: true })}
+              />
+            </div>
+            <div className="flex flex-col">
+              <label className="mb-2 font-bold" htmlFor="location">
+                State :
+              </label>
+              <input
+                type="text"
+                id="state"
+                name="state"
+                className="h-[50px] rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none lg:w-1/2"
+                placeholder="Enter State"
+                {...register("state", { required: true })}
+              />
+            </div>
+
+            <div className="flex flex-col">
+              <label className="mb-2 font-bold" htmlFor="location">
+                Zipcode :
+              </label>
+              <input
+                type="number"
+                id="zipcode"
+                name="zipcode"
+                className="h-[50px] rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none lg:w-1/2"
+                placeholder="Enter Zipcode"
+                {...register("zipcode", { required: true })}
               />
             </div>
 
@@ -171,7 +205,7 @@ function AddProperty() {
                 Dimensions (ft) :
               </label>
               <input
-                type="number"
+                type="text"
                 id="dimensions"
                 className="h-[50px] rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none lg:w-1/2"
                 placeholder="Enter Dimensions"
@@ -462,59 +496,6 @@ function AddProperty() {
                 multiple
                 accept="image/*"
                 {...register("floorPlanImages", { required: true })}
-              />
-            </div>
-
-            {/* owner */}
-
-            <div className="flex flex-col">
-              <label className="mb-2 font-bold" htmlFor="ownerName">
-                Owner Name :
-              </label>
-              <input
-                type="text"
-                id="ownerName"
-                className="h-[50px] rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none lg:w-1/2"
-                placeholder="Enter Property Name"
-                {...register("ownerName", { required: true })}
-              />
-            </div>
-            <div className="flex flex-col">
-              <label className="mb-2 font-bold" htmlFor="ownerContact">
-                Owner Contact Number:
-              </label>
-              <input
-                type="number"
-                id="ownerContact"
-                className="h-[50px] rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none lg:w-1/2"
-                placeholder="Enter Price"
-                {...register("ownerContact", { required: true })}
-              />
-            </div>
-
-            <div className="flex flex-col">
-              <label className="mb-2 font-bold" htmlFor="ownerEmail">
-                Owner Email :
-              </label>
-              <input
-                type="email"
-                id="ownerEmail"
-                className="h-[50px] rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none lg:w-1/2"
-                placeholder="Enter Location"
-                {...register("ownerEmail", { required: true })}
-              />
-            </div>
-
-            <div className="flex flex-col">
-              <label className="mb-2 font-bold" htmlFor="ownerAddress">
-                Address :
-              </label>
-              <input
-                type="text"
-                id="ownerAddress"
-                className="h-[50px] rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none lg:w-1/2"
-                placeholder="Enter Address"
-                {...register("ownerAddress", { required: true })}
               />
             </div>
           </div>

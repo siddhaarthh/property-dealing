@@ -1,7 +1,5 @@
 // api.js
 
-import { redirect } from "next/navigation";
-import { NextResponse } from "next/server";
 import { toast } from "react-toastify";
 
 // Function to fetch all properties
@@ -61,8 +59,6 @@ export const createProperty = async (data) => {
     // Check if the response status is within the success range
     if (res.ok) {
       toast.success("Property Created successfully");
-    } else {
-      toast.error("Failed to Create property");
     }
 
     // Parse the JSON response and return data

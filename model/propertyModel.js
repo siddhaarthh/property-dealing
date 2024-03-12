@@ -18,10 +18,6 @@ const propertySchema = new Schema(
       },
     ],
 
-    address: {
-      type: String,
-      required: true,
-    },
     price: {
       type: Number,
       required: true,
@@ -88,30 +84,21 @@ const propertySchema = new Schema(
     ],
 
     location: {
-      type: String,
-      required: true,
-    },
-
-    owner: {
-      name: {
+      street: {
         type: String,
         required: true,
       },
-      contact: {
+      city: {
+        type: String,
+        required: true,
+      },
+      state: {
+        type: String,
+        required: true,
+      },
+      zipcode: {
         type: Number,
         required: true,
-        unique: true,
-      },
-      email: {
-        type: String,
-        required: true,
-        unique: true,
-      },
-
-      address: {
-        type: String,
-        required: true,
-        unique: true,
       },
     },
 
@@ -122,6 +109,16 @@ const propertySchema = new Schema(
         required: true,
       },
       image: {
+        type: String,
+        ref: "User",
+        required: true,
+      },
+      name: {
+        type: String,
+        ref: "User",
+        required: true,
+      },
+      email: {
         type: String,
         ref: "User",
         required: true,

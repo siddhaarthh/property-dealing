@@ -46,10 +46,6 @@ function PropertyEditForm() {
         setValue("propertyCategory", propertyData.details.propertyCategory);
         setValue("status", propertyData.details.status);
         setValue("description", propertyData.description);
-        setValue("ownerName", propertyData.owner.name);
-        setValue("ownerContact", propertyData.owner.contact);
-        setValue("ownerEmail", propertyData.owner.email);
-        setValue("ownerAddress", propertyData.owner.address);
         setValue("amenities", propertyData.amenities);
       } catch (error) {
         toast.error(error.message);
@@ -61,8 +57,29 @@ function PropertyEditForm() {
 
   const onSubmit = async (data, e) => {
     e.preventDefault();
-    console.log(data);
-    const res = await updateProperty(id, data);
+
+    const propertyData = {
+      name: data.propertyName,
+      address: data.address,
+      price: Number(data.price),
+      description: data.description,
+      amenities: [...data.amenities],
+      details: {
+        builtUpArea: `${data.builtUpArea} sqft`,
+        dimensions: `${data.dimensions} ft`,
+        builtYear: data.buildYear,
+        parking: data.parking,
+        bedrooms: data.bedrooms,
+        bathrooms: data.bathrooms,
+        balcony: data.balcony,
+        propertyCategory: data.propertyCategory,
+        carpetArea: `${data.carpetArea} sqft`,
+        status: data.status,
+      },
+      location: data.location,
+    };
+
+    const res = await updateProperty(id, propertyData);
     if (res.ok) {
       router.push(`/properties/${id}`);
     } else {

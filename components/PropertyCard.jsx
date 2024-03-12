@@ -49,13 +49,13 @@ function PropertyCard({ property }) {
       <div className="flex w-full justify-between px-2">
         <div className="flex items-center gap-3">
           <Image
-            src={property.user.image}
+            src={property?.user?.image}
             width={40}
             height={40}
             alt="user picture"
             className="rounded-full"
           />
-          <span>{property.owner.name}</span>
+          <span>{property?.user?.name}</span>
         </div>
 
         <Buttons />

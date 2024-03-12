@@ -2,9 +2,12 @@ import { getSingleProperty } from "@/utils/propertyHandler";
 import Image from "next/image";
 import selectLocation from "/assets/location-icon-black.svg";
 import Buttons from "@/components/Buttons";
+import PropertyMap from "@/components/Propertymap";
 
 async function PropertiesDetails({ params }) {
   const property = await getSingleProperty(params.id);
+
+  console.log(property);
 
   return (
     <section className="mb-24 px-5 lg:px-0">
@@ -32,7 +35,10 @@ async function PropertiesDetails({ params }) {
               alt="location icon"
               className="inline-block"
             />
-            <span>{property.address}</span>
+            <span>
+              {property.location.street}, {property.location.city},
+              {property.location.state},{property.location.zipcode}
+            </span>
           </div>
           <p className="text-2xl font-bold">$ {property.price}</p>
         </div>
@@ -195,13 +201,8 @@ async function PropertiesDetails({ params }) {
           {/* Location */}
           <h6 className=" mb-5 text-xl font-bold">Location</h6>
 
-          <Image
-            src={`/assets/propertyImages/map.jpg`}
-            width={650}
-            height={0}
-            alt="property image"
-            className="w-[100%]  object-fill object-center"
-          />
+          {/* <PropertyMap /> */}
+          <PropertyMap property={property} />
         </div>
 
         {/* left side  */}
