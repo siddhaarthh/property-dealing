@@ -4,9 +4,12 @@ import BreadCrumb from "@/components/BreadCrumb";
 import PropertyPagePropertyCard from "@/components/PropertyPagePropertyCard";
 import { getPropertyHandler } from "@/utils/propertyHandler";
 import Buttons from "@/components/Buttons";
+import { revalidatePath } from "next/cache";
 
 async function Properties() {
   const property = await getPropertyHandler();
+
+  revalidatePath("/properties");
 
   return (
     <section className="relative mx-auto mb-10 w-full  xl:w-[80%]">
