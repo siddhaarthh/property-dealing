@@ -13,7 +13,7 @@ async function Properties() {
 
   return (
     <section className="relative mx-auto mb-10 w-full  xl:w-[80%]">
-      <BreadCrumb />
+      {/* <BreadCrumb /> */}
 
       <div className="flex gap-10">
         <div className="w-[20%] rounded-lg border-2">
