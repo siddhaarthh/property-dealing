@@ -67,7 +67,7 @@ function AddProperty() {
       const res = await createProperty(propertyData);
 
       setIsLoading(false);
-      router.push(res.url);
+      router.push(`${res.url}`);
     } catch (error) {
       // Handle any errors that occur during property creation
       console.error("Error creating property:", error);

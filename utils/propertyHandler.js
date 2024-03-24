@@ -1,5 +1,3 @@
-// api.js
-
 import { toast } from "react-toastify";
 
 // Function to fetch all properties
@@ -70,12 +68,6 @@ export const createProperty = async (data) => {
 };
 
 export const deleteProperty = async (id) => {
-  // const confirm = window.confirm(
-  //   "Are you sure you want to delete this property?",
-  // );
-
-  // if (!confirm) return;
-
   try {
     const res = await fetch(`http://localhost:3000/api/properties/${id}`, {
       method: "DELETE",
@@ -112,7 +104,6 @@ export const updateProperty = async (id, data) => {
       body: sendData,
     });
 
-    // Check if the response status is within the success range
     if (!res.ok) {
       throw new Error(`Failed to update property: ${res.status}`);
     }
@@ -123,10 +114,8 @@ export const updateProperty = async (id, data) => {
       toast.error("Failed to update property");
     }
 
-    // Redirect to the properties page
     return res;
   } catch (error) {
-    // Handle any errors that occur during the fetch operation or JSON parsing
     throw new Error(`Error updating property: ${error.message}`);
   }
 };
