@@ -4,9 +4,8 @@ import { Bookmark, BookmarkCheck, Share } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 import { toast } from "react-toastify";
-import ShareButtons from "./ShareButtons";
 
-function Buttons({ property }) {
+function BookmarkButton({ property }) {
   const { data: session } = useSession();
   const userId = session?.user?.id;
   const [isBookmarked, setIsBookmarked] = useState(false);
@@ -89,9 +88,8 @@ function Buttons({ property }) {
           <Bookmark />
         </button>
       )}
-      <ShareButtons property={property} />
     </div>
   );
 }
 
-export default Buttons;
+export default BookmarkButton;

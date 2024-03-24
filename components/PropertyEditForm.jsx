@@ -23,12 +23,14 @@ function PropertyEditForm() {
     if (!id) return;
 
     const fetchProperty = async () => {
+      setIsLoading(true);
       try {
         const propertyData = await getSingleProperty(id);
         if (!propertyData) {
           throw new Error("Property not found");
         }
         setProperty(propertyData);
+        setIsLoading(false);
 
         // Set default values for form fields
         setValue("propertyName", propertyData.name);
@@ -81,16 +83,18 @@ function PropertyEditForm() {
         street: data.street,
         city: data.city,
         state: data.state,
-        zipcode: Number(data.zipcode),
+        zipCode: data.zipCode,
       },
     };
 
+    setIsLoading(true);
     const res = await updateProperty(id, propertyData);
     if (res.ok) {
       router.push(`/properties/${id}`);
     } else {
       toast.error("Failed to update property");
     }
+    setIsLoading(false);
   };
 
   return (
@@ -166,12 +170,12 @@ function PropertyEditForm() {
             Zipcode :
           </label>
           <input
-            type="number"
+            type="string"
             id="zipcode"
             name="zipcode"
             className="h-[50px] rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none lg:w-1/2"
             placeholder="Enter Zipcode"
-            {...register("zipcode", { required: true })}
+            {...register("zipCode", { required: true })}
           />
         </div>
 

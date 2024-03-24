@@ -96,8 +96,8 @@ const propertySchema = new Schema(
         type: String,
         required: true,
       },
-      zipcode: {
-        type: Number,
+      zipCode: {
+        type: String,
         required: true,
       },
     },

@@ -10,9 +10,11 @@ function OurAgents() {
   return (
     <section className="relative mx-auto mb-24  flex  w-[90%]  flex-col gap-10 xl:w-[80%] ">
       <div className="self-center  md:self-start">
-        <h3 className="mb-1 font-playfair text-[40px] font-bold">Our Agents</h3>
+        <h3 className="mb-1 text-center font-playfair text-[40px] font-bold md:text-left">
+          Our Agents
+        </h3>
 
-        <p className="text-gray-500">
+        <p className="text-justify text-gray-500 md:text-left">
           Generous agents understand your needs and emotions,{" "}
           <br className="hidden md:block" /> guiding you to find your perfect
           home.

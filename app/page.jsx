@@ -1,21 +1,20 @@
 import Feature from "@/components/Feature";
 import GetStartedText from "@/components/GetStartedText";
+import Hero from "@/components/Hero";
 import HeroSection from "@/components/HeroSection";
 import OurAgents from "@/components/OurAgents";
 import PropertyHome from "@/components/PropertyHome";
-import Reviews from "@/components/Reviews";
-import Why from "@/components/Why";
+import StartNow from "@/components/StartNow";
 
 export default function Home() {
   return (
     <main className="flex flex-col gap-14">
-      <HeroSection />
-      {/* <GetStartedText /> */}
-      {/* <Why /> */}
+      {/* <HeroSection /> */}
+      <Hero />
+      <StartNow />
       <PropertyHome />
       <Feature />
       <OurAgents />
-      {/* <Reviews /> */}
     </main>
   );
 }

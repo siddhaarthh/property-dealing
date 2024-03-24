@@ -48,7 +48,7 @@ function AddProperty() {
         street: data.street,
         city: data.city,
         state: data.state,
-        zipcode: Number(data.zipcode),
+        zipCode: data.zipCode,
       },
 
       user: {
@@ -78,7 +78,7 @@ function AddProperty() {
   return (
     <section className="mx-auto w-full px-5 lg:w-[80%] lg:px-0">
       <div className="w-full">
-        <h3 className="mb-4 mt-6 font-playfair  text-3xl font-bold">
+        <h3 className="mb-4 mt-6 font-playfair text-3xl  font-bold md:mb-10">
           Add new property
         </h3>
 
@@ -154,12 +154,12 @@ function AddProperty() {
                 Zipcode :
               </label>
               <input
-                type="number"
+                type="text"
                 id="zipcode"
                 name="zipcode"
                 className="h-[50px] rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none lg:w-1/2"
                 placeholder="Enter Zipcode"
-                {...register("zipcode", { required: true })}
+                {...register("zipCode", { required: true })}
               />
             </div>
 

@@ -3,11 +3,10 @@ import React from "react";
 import bed from "@/assets/bed.svg";
 import bath from "@/assets/bath.svg";
 import parking from "@/assets/parking.svg";
-import plus from "@/assets/plus.svg";
-import favorite from "@/assets/favorite.svg";
-import share from "@/assets/share.svg";
 import Link from "next/link";
 import Buttons from "./Buttons";
+
+import BookmarkButton from "./BookmarkButton";
 
 function PropertyCard({ property }) {
   return (
@@ -58,7 +57,7 @@ function PropertyCard({ property }) {
           <span>{property?.user?.name}</span>
         </div>
 
-        <Buttons />
+        <BookmarkButton property={property} />
       </div>
     </div>
   );

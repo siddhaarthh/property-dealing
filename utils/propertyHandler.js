@@ -1,21 +1,20 @@
 import { toast } from "react-toastify";
 
+const API_URL = "http://localhost:3000/api/properties";
+
 // Function to fetch all properties
 export const getPropertyHandler = async () => {
   try {
-    const res = await fetch(`${process.env.API_URL}/api/properties`, {
+    const res = await fetch(`${process.env.APP_URL}/api/properties`, {
       cache: "no-store",
     });
 
-    // Check if the response status is within the success range
     if (!res.ok) {
       throw new Error(`Failed to fetch properties: ${res.status}`);
     }
 
-    // Parse the JSON response and return data
     return await res.json();
   } catch (error) {
-    // Handle any errors that occur during the fetch operation or JSON parsing
     throw new Error(`Error fetching properties: ${error.message}`);
   }
 };
@@ -23,30 +22,26 @@ export const getPropertyHandler = async () => {
 // Function to fetch a single property by ID
 export const getSingleProperty = async (id) => {
   try {
-    const res = await fetch(`http://localhost:3000/api/properties/${id}`, {
+    const res = await fetch(`${API_URL}/${id}`, {
       cache: "no-store",
     });
 
-    // Check if the response status is within the success range
     if (!res.ok) {
       throw new Error(`Failed to fetch property: ${res.status}`);
     }
 
-    // Parse the JSON response and return data
     return await res.json();
   } catch (error) {
-    // Handle any errors that occur during the fetch operation or JSON parsing
-    throw new Error(`Error fetching property: ${error.message}`);
+    throw new Error(`Error fetching property: ${error?.message}`);
   }
 };
 
 // Function to create a new property
 export const createProperty = async (data) => {
-  // Convert data to JSON format
   const sendData = JSON.stringify(data);
 
   try {
-    const res = await fetch("http://localhost:3000/api/properties", {
+    const res = await fetch(API_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -54,49 +49,43 @@ export const createProperty = async (data) => {
       body: sendData,
     });
 
-    // Check if the response status is within the success range
-    if (res.ok) {
-      toast.success("Property Created successfully");
+    if (!res.ok) {
+      throw new Error(`Failed to create property: ${res.status}`);
     }
 
-    // Parse the JSON response and return data
+    toast.success("Property Created successfully");
+
     return res;
   } catch (error) {
-    // Handle any errors that occur during the fetch operation or JSON parsing
     throw new Error(`Error creating property: ${error.message}`);
   }
 };
 
+// Function to delete a property by ID
 export const deleteProperty = async (id) => {
   try {
-    const res = await fetch(`http://localhost:3000/api/properties/${id}`, {
+    const res = await fetch(`${API_URL}/${id}`, {
       method: "DELETE",
     });
 
-    // Check if the response status is within the success range
     if (!res.ok) {
       throw new Error(`Failed to delete property: ${res.status}`);
     }
 
-    if (res.ok) {
-      toast.success("Property deleted successfully");
-    } else {
-      toast.error("Failed to delete property");
-    }
+    toast.success("Property deleted successfully");
 
-    // Redirect to the properties page
     return res;
   } catch (error) {
-    // Handle any errors that occur during the fetch operation or JSON parsing
     throw new Error(`Error deleting property: ${error.message}`);
   }
 };
 
+// Function to update a property by ID
 export const updateProperty = async (id, data) => {
   const sendData = JSON.stringify(data);
 
   try {
-    const res = await fetch(`http://localhost:3000/api/properties/${id}`, {
+    const res = await fetch(`${API_URL}/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -108,11 +97,7 @@ export const updateProperty = async (id, data) => {
       throw new Error(`Failed to update property: ${res.status}`);
     }
 
-    if (res.ok) {
-      toast.success("Property updated successfully");
-    } else {
-      toast.error("Failed to update property");
-    }
+    toast.success("Property updated successfully");
 
     return res;
   } catch (error) {

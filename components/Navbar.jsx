@@ -26,7 +26,7 @@ function Navbar() {
   }, []);
 
   return (
-    <nav className="relative mx-auto flex items-center justify-between px-3  py-3 text-lg lg:px-3 xl:w-[80%]">
+    <nav className="relative mx-auto flex items-center justify-between px-3 py-3 text-lg lg:px-3 xl:w-[80%]">
       <Link href="/" className="inline-block w-[150px]">
         <Image src={logo} width={0} height={0} alt="Bitway Logo" />
       </Link>
@@ -62,7 +62,7 @@ function Navbar() {
       {/*  profile drop down */}
 
       {session && isProfileOpen && (
-        <div className="absolute -bottom-[150%] right-2 z-50 flex flex-col items-start rounded-lg bg-primary-500 p-4 text-white">
+        <div className="absolute -bottom-[120%] right-4 z-50 flex flex-col items-start rounded-lg bg-primary-500 p-4 text-white">
           <Link href="/profile" onClick={() => setIsProfileOpen(false)}>
             Profile
           </Link>

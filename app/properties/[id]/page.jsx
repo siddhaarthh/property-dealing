@@ -43,7 +43,7 @@ async function PropertiesDetails({ params }) {
 
         {/* buttons */}
         <div className="flex items-center gap-2 self-start">
-          <Buttons />
+          <Buttons property={property} />
         </div>
       </div>
 
