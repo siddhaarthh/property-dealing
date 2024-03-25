@@ -4,6 +4,8 @@ import selectLocation from "/assets/location-icon-black.svg";
 import Buttons from "@/components/Buttons";
 import PropertyMap from "@/components/Propertymap";
 
+import PropertyImages from "@/components/PropertyImages";
+
 async function PropertiesDetails({ params }) {
   const property = await getSingleProperty(params.id);
 
@@ -12,7 +14,7 @@ async function PropertiesDetails({ params }) {
       {/* property image */}
       <div className="mx-auto mb-5 lg:w-full">
         <Image
-          src={property.propertyImages[1]}
+          src={property.propertyImages[3]}
           height={0}
           width={1200}
           alt="property image"
@@ -35,7 +37,7 @@ async function PropertiesDetails({ params }) {
             />
             <span>
               {property.location.street}, {property.location.city},
-              {property.location.state},{property.location.zipcode}
+              {property.location.state},{property.location.zipCode}
             </span>
           </div>
           <p className="text-2xl font-bold">$ {property.price}</p>
@@ -110,31 +112,7 @@ async function PropertiesDetails({ params }) {
 
           <h6 className=" mb-5 text-xl font-bold">Property Images</h6>
 
-          <div
-            className={`mx-auto mb-10 grid gap-x-4 gap-y-4 ${property.amenities.length >= 2 ? "grid-cols-2" : "grid-cols-1"}`}
-          >
-            {property.propertyImages.map((image, index) => (
-              <div
-                key={index}
-                className={` ${
-                  property.propertyImages.length === 3 && index === 2
-                    ? "col-span-2"
-                    : "col-span-1"
-                } `}
-              >
-                <Image
-                  key={index}
-                  src={image}
-                  width={0}
-                  height={0}
-                  sizes="100%"
-                  alt="property image"
-                  className=" w-full
-                   rounded-xl object-cover object-center"
-                />
-              </div>
-            ))}
-          </div>
+          <PropertyImages property={property} />
 
           {/* features */}
 

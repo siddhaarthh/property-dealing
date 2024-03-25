@@ -7,7 +7,10 @@ async function PropertyHome() {
   return (
     <section className="w-full bg-gray-100 py-10 pb-20 md:px-5 lg:px-[10rem]">
       <div className="mb-5 flex w-full items-center justify-between px-3 text-center">
-        <h3 className=" w-full font-playfair text-2xl font-[700] sm:text-[30px] md:text-[35px] xl:text-[40px]">
+        <h3
+          className=" mb-5 w-full font-playfair
+         text-2xl font-[700] sm:text-[30px] md:text-[35px] xl:text-[40px]"
+        >
           Explore our recent properties
         </h3>
       </div>

@@ -19,18 +19,18 @@ function SearchForm() {
   };
   return (
     <form onSubmit={handleSubmit}>
-      <div className="mx-auto mt-5 flex flex-col justify-center gap-3 px-5 md:flex-row xl:w-[50%]">
+      <div className="mx-auto flex flex-col justify-center gap-3 px-5 md:flex-row ">
         <input
           type="text"
           placeholder="Enter keyword or location"
-          className="rounded-lg px-3 py-2 text-primary-500 outline-none md:w-1/2 md:px-3 md:py-3"
+          className="w-full rounded-lg  px-3 py-4 text-primary-500 outline-none "
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
         />
 
         <select
           value={propertyType}
-          className="rounded-lg px-3 py-2  text-primary-500 outline-none md:w-1/4"
+          className="rounded-lg px-3 py-2  text-primary-500 outline-none md:w-2/4 "
           onChange={(e) => setPropertyType(e.target.value)}
         >
           <option value="all">All</option>
@@ -40,7 +40,7 @@ function SearchForm() {
           <option value="condo">Condo</option>
         </select>
 
-        <button className=" rounded-lg bg-blue-500 px-5 py-2 text-lg text-white">
+        <button className=" rounded-lg bg-white py-2 text-lg text-primary-500 md:px-10">
           Search
         </button>
       </div>

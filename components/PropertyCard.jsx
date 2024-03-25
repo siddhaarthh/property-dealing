@@ -4,27 +4,40 @@ import bed from "@/assets/bed.svg";
 import bath from "@/assets/bath.svg";
 import parking from "@/assets/parking.svg";
 import Link from "next/link";
-import Buttons from "./Buttons";
 
 import BookmarkButton from "./BookmarkButton";
 
 function PropertyCard({ property }) {
+  // write a function to trim the description to 100 characters
+  // and add ... at the end
+
+  function trimDescription(description) {
+    if (description.length > 170) {
+      return description.slice(0, 170) + "... more";
+    }
+    return description;
+  }
   return (
     <div className=" flex h-max flex-col items-center gap-3 rounded-2xl bg-white p-5 shadow-md ">
       <Link href={`/properties/${property._id}`}>
         <Image
-          src={property.propertyImages[0]}
+          src={property.propertyImages[2]}
           width={400}
-          height={500}
+          height={600}
           alt="property image"
-          className="rounded-2xl object-contain"
+          className="rounded-2xl object-center"
         />
-        <div className="mt-2 flex w-full flex-col gap-3  border-b-2 px-1 pb-4">
-          <h5 className="font-playfair text-[18px] font-[700] text-primary md:text-[22px]">
-            {property.name}
-          </h5>
-          <p className="text-[20px]">${property.price}</p>
-          <p className="text-gray-500">{property.description}</p>
+
+        <div className="mt-2 flex w-full flex-col gap-2  border-b-2 px-1 pb-4">
+          <div>
+            <h5 className="font-playfair text-[18px] font-[700] text-primary md:text-[22px]">
+              {property.name}
+            </h5>
+            <p className="text-[20px]">CZK {property.price}</p>
+          </div>
+          <p className="text-justify text-gray-500  ">
+            {trimDescription(property.description)}
+          </p>
 
           <div className="flex items-center gap-5">
             <div className="flex items-center gap-3">

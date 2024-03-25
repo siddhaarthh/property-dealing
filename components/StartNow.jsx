@@ -3,8 +3,8 @@ import React from "react";
 
 function StartNow() {
   return (
-    <div className="relative mx-auto flex flex-col justify-between gap-10 px-3 md:flex-row md:px-5 xl:w-[85%]">
-      <div className="flex w-full flex-col gap-2 rounded-lg bg-[#f3f4f6] p-2 py-4  shadow-md md:px-10 md:py-10">
+    <div className="relative mx-auto flex flex-col justify-between gap-5 px-3 pt-5 sm:pt-16 md:flex-row md:gap-10 md:px-5 md:pt-0 xl:w-[85%]">
+      <div className="flex w-full flex-col gap-2 rounded-lg bg-[#50aea63e] p-2 py-4  shadow-md md:px-10 md:py-10">
         <h2 className="text-2xl font-semibold ">For Buyers </h2>
         <p className=" text-xl">Find your dream home today.</p>
         <Link
