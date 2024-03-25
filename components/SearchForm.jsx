@@ -23,7 +23,7 @@ function SearchForm() {
         <input
           type="text"
           placeholder="Enter keyword or location"
-          className="w-full rounded-lg  px-3 py-4 text-primary-500 outline-none "
+          className="w-full rounded-lg px-3  py-4 text-primary-500 outline-none "
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
         />
@@ -40,7 +40,7 @@ function SearchForm() {
           <option value="condo">Condo</option>
         </select>
 
-        <button className=" rounded-lg bg-white py-2 text-lg text-primary-500 md:px-10">
+        <button className="rounded-lg bg-white py-2 text-lg  text-primary-500 md:px-10">
           Search
         </button>
       </div>

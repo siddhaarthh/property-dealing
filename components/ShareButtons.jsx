@@ -17,8 +17,9 @@ function ShareButtons({ property }) {
         url={shareUrl}
         quote={property?.name}
         hashtag={`#${property?.details?.propertyCategory}ForSale`}
+        className="rounded-lg bg-neutral-200"
       >
-        <FacebookIcon size={35} round={true} />
+        <FacebookIcon size={35} className="rounded-lg" />
       </FacebookShareButton>
 
       <TwitterShareButton
@@ -26,7 +27,7 @@ function ShareButtons({ property }) {
         title={property?.name}
         hashtags={[`#${property?.details?.propertyCategory}ForSale`]}
       >
-        <TwitterIcon size={35} round={true} />
+        <TwitterIcon size={35} className="rounded-lg" />
       </TwitterShareButton>
 
       <WhatsappShareButton
@@ -34,7 +35,7 @@ function ShareButtons({ property }) {
         title={property?.name}
         separator=":: "
       >
-        <WhatsappIcon size={35} round={true} />
+        <WhatsappIcon size={35} className="rounded-lg" />
       </WhatsappShareButton>
     </div>
   );

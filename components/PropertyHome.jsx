@@ -2,7 +2,10 @@ import PropertyCard from "./PropertyCard";
 import { getPropertyHandler } from "@/utils/propertyHandler";
 
 async function PropertyHome() {
-  const data = await getPropertyHandler();
+  const property = await getPropertyHandler();
+
+  const shuffledProperty = property.sort(() => Math.random() - 0.5);
+  const slicedProperty = shuffledProperty.slice(0, 6);
 
   return (
     <section className="w-full bg-gray-100 py-10 pb-20 md:px-5 lg:px-[10rem]">
@@ -16,7 +19,7 @@ async function PropertyHome() {
       </div>
 
       <div className="grid-col-1 grid gap-10 px-5 md:grid-cols-2 lg:px-0 xl:grid-cols-3">
-        {data.slice(0, 6).map((property) => (
+        {slicedProperty.map((property) => (
           <PropertyCard key={property._id} property={property} />
         ))}
       </div>

@@ -9,6 +9,18 @@ import PropertyImages from "@/components/PropertyImages";
 async function PropertiesDetails({ params }) {
   const property = await getSingleProperty(params.id);
 
+  // i want to make a function that makes the paragraphs of the description in different line
+
+  function makeParagraphs(description) {
+    const paragraphs = description.split("\n");
+    return paragraphs.map((paragraph, index) => (
+      <p key={index} className=" text-justify">
+        {paragraph}
+        <br /> {/* Add this line to create a line break */}
+      </p>
+    ));
+  }
+
   return (
     <section className="mb-24 px-5 lg:px-0">
       {/* property image */}
@@ -40,7 +52,7 @@ async function PropertiesDetails({ params }) {
               {property.location.state},{property.location.zipCode}
             </span>
           </div>
-          <p className="text-2xl font-bold">$ {property.price}</p>
+          <p className="text-2xl font-bold">CZK {property.price}</p>
         </div>
 
         {/* buttons */}
@@ -56,7 +68,9 @@ async function PropertiesDetails({ params }) {
           <div className="mb-4 flex  items-center gap-5 border-b-2 pb-3 ">
             <h3 className="text-2xl font-bold">Description</h3>
           </div>
-          <p className="mb-10 text-justify">{property.description}</p>
+          <p className="mb-10 text-justify text-lg">
+            {makeParagraphs(property.description)}
+          </p>
 
           <h6 className=" mb-5 text-xl font-bold">Details</h6>
 

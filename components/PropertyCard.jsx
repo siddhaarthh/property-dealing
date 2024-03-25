@@ -6,17 +6,9 @@ import parking from "@/assets/parking.svg";
 import Link from "next/link";
 
 import BookmarkButton from "./BookmarkButton";
+import { trimDescription } from "@/utils/helperFunction";
 
 function PropertyCard({ property }) {
-  // write a function to trim the description to 100 characters
-  // and add ... at the end
-
-  function trimDescription(description) {
-    if (description.length > 170) {
-      return description.slice(0, 170) + "... more";
-    }
-    return description;
-  }
   return (
     <div className=" flex h-max flex-col items-center gap-3 rounded-2xl bg-white p-5 shadow-md ">
       <Link href={`/properties/${property._id}`}>

@@ -9,3 +9,10 @@ export const changeTo64 = async (imageFiles) => {
 
   return image64;
 };
+
+export function trimDescription(description) {
+  if (description.length > 170) {
+    return description.slice(0, 170) + "... more";
+  }
+  return description;
+}
