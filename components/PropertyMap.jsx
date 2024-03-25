@@ -1,16 +1,66 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import "mapbox-gl/dist/mapbox-gl.css";
-import Map, { Marker } from "react-map-gl";
-import { setDefaults, fromAddress } from "react-geocode";
 import Spinner from "./Spinner";
+import { Map, Marker } from "react-map-gl";
+import pin from "@/public/assets/pin.svg";
 import Image from "next/image";
-import location from "@/public/assets/location-icon-black.svg";
-import { set } from "mongoose";
 
 function PropertyMap({ property }) {
-  return <div>PropertyMap</div>;
+  const [lat, setLat] = useState(null);
+  const [lng, setLng] = useState(null);
+
+  const [viewport, setViewport] = useState({
+    latitude: 0,
+    longitude: 0,
+    zoom: 12,
+    width: "100%",
+  });
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(true);
+    const fetchCoords = async () => {
+      const address = `${property?.location?.street}, ${property?.location?.city}, ${property?.location?.state}, ${property?.location?.zipCode}`;
+      const res = await fetch(
+        `https://us1.locationiq.com/v1/search?key=${process.env.GEOCODE_API_KEY}&q=${address}&format=json`,
+      );
+      const data = await res.json();
+      setLat(data[0]?.lat);
+      setLng(data[0]?.lon);
+      setViewport({
+        ...viewport,
+        latitude: lat,
+        longitude: lng,
+      });
+      setLoading(false);
+    };
+    fetchCoords();
+  }, []);
+
+  if (loading) return <Spinner />;
+
+  if (!lat || !lng) return <div>Map not available</div>;
+
+  return (
+    !loading && (
+      <Map
+        mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_API_KEY}
+        mapLib={import("mapbox-gl")}
+        initialViewState={{
+          longitude: lng,
+          latitude: lat,
+          zoom: 5,
+        }}
+        style={{ width: "100%", height: "400px" }}
+        mapStyle={"mapbox://styles/mapbox/streets-v11"}
+      >
+        <Marker longitude={lng} latitude={lat} anchor="bottom">
+          <Image src={pin} alt="location icon" width={40} height={40} />
+        </Marker>
+      </Map>
+    )
+  );
 }
 
 export default PropertyMap;

@@ -5,19 +5,18 @@ import Buttons from "@/components/Buttons";
 import PropertyMap from "@/components/Propertymap";
 
 import PropertyImages from "@/components/PropertyImages";
+import React from "react";
 
 async function PropertiesDetails({ params }) {
   const property = await getSingleProperty(params.id);
 
-  // i want to make a function that makes the paragraphs of the description in different line
-
   function makeParagraphs(description) {
     const paragraphs = description.split("\n");
     return paragraphs.map((paragraph, index) => (
-      <p key={index} className=" text-justify">
+      <React.Fragment key={index}>
         {paragraph}
-        <br /> {/* Add this line to create a line break */}
-      </p>
+        <br />
+      </React.Fragment>
     ));
   }
 
