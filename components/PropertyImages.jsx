@@ -8,7 +8,7 @@ function PropertyImages({ property }) {
     <>
       <div className="mb-5 w-full">
         <ImageGallery
-          items={property.propertyImages.map((image) => ({
+          items={property?.propertyImages.map((image) => ({
             original: image,
             thumbnail: image,
           }))}

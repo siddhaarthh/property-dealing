@@ -9,6 +9,9 @@ import React from "react";
 
 async function PropertiesDetails({ params }) {
   const property = await getSingleProperty(params.id);
+  if (!property) {
+    return <div>Property not found</div>;
+  }
 
   function makeParagraphs(description) {
     const paragraphs = description.split("\n");
@@ -25,7 +28,7 @@ async function PropertiesDetails({ params }) {
       {/* property image */}
       <div className="mx-auto mb-5 lg:w-full">
         <Image
-          src={property.propertyImages[3]}
+          src={property?.propertyImages[3]}
           height={0}
           width={1200}
           alt="property image"
@@ -37,7 +40,7 @@ async function PropertiesDetails({ params }) {
       {/* property details */}
       <div className="mx-auto mb-10 flex flex-col gap-2 lg:w-[80%] lg:flex-row">
         <div className="mb-2 flex w-full flex-col justify-center gap-2 md:mb-0">
-          <h4 className=" font-playfair text-3xl">{property.name}</h4>
+          <h4 className=" font-playfair text-3xl">{property?.name}</h4>
           <div className="flex items-center gap-2">
             <Image
               src={selectLocation}

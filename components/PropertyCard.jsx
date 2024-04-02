@@ -6,7 +6,7 @@ import parking from "@/assets/parking.svg";
 import Link from "next/link";
 
 import BookmarkButton from "./BookmarkButton";
-import { trimDescription } from "@/utils/helperFunction";
+import { formatPrice, trimDescription } from "@/utils/helperFunction";
 
 function PropertyCard({ property }) {
   return (
@@ -25,7 +25,7 @@ function PropertyCard({ property }) {
             <h5 className="font-playfair text-[18px] font-[700] text-primary md:text-[22px]">
               {property.name}
             </h5>
-            <p className="text-[20px]">CZK {property.price}</p>
+            <p className="text-[20px]">{formatPrice(property.price)}</p>
           </div>
           <p className="text-justify text-gray-500  ">
             {trimDescription(property.description)}

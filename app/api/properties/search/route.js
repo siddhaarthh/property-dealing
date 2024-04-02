@@ -13,13 +13,14 @@ export const GET = async (req) => {
       $or: [
         { name: locationPattern },
         { description: locationPattern },
+        { "location.street": locationPattern },
         { "location.city": locationPattern },
         { "location.state": locationPattern },
-        { "location.zipcode": locationPattern },
+        { "location.zipCode": locationPattern },
       ],
     };
 
-    if (propertyType !== "all") {
+    if (propertyType && propertyType !== "All") {
       const typePattern = new RegExp(propertyType, "i");
       query.type = typePattern;
     }

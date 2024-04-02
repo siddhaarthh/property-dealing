@@ -16,3 +16,11 @@ export function trimDescription(description) {
   }
   return description;
 }
+
+export function formatPrice(price) {
+  const formattedPrice = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "CZK",
+  }).format(price);
+  return formattedPrice.replace(/\.00$/, "");
+}

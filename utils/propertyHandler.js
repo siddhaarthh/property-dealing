@@ -5,9 +5,12 @@ const API_URL = "http://localhost:3000/api/properties";
 // Function to fetch all properties
 export const getPropertyHandler = async () => {
   try {
-    const res = await fetch(`${process.env.APP_URL}/api/properties`, {
-      cache: "no-store",
-    });
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_APP_URL}/api/properties`,
+      {
+        cache: "no-store",
+      },
+    );
 
     if (!res.ok) {
       throw new Error(`Failed to fetch properties: ${res.status}`);
@@ -22,9 +25,12 @@ export const getPropertyHandler = async () => {
 // Function to fetch a single property by ID
 export const getSingleProperty = async (id) => {
   try {
-    const res = await fetch(`${API_URL}/${id}`, {
-      cache: "no-store",
-    });
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_APP_URL}/api/properties/${id}`,
+      {
+        cache: "no-store",
+      },
+    );
 
     if (!res.ok) {
       throw new Error(`Failed to fetch property: ${res.status}`);
@@ -32,7 +38,7 @@ export const getSingleProperty = async (id) => {
 
     return await res.json();
   } catch (error) {
-    throw new Error(`Error fetching property: ${error?.message}`);
+    console.log(error.message);
   }
 };
 
@@ -41,13 +47,16 @@ export const createProperty = async (data) => {
   const sendData = JSON.stringify(data);
 
   try {
-    const res = await fetch(API_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_APP_URL}/api/properties`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: sendData,
       },
-      body: sendData,
-    });
+    );
 
     if (!res.ok) {
       throw new Error(`Failed to create property: ${res.status}`);
@@ -64,9 +73,12 @@ export const createProperty = async (data) => {
 // Function to delete a property by ID
 export const deleteProperty = async (id) => {
   try {
-    const res = await fetch(`${API_URL}/${id}`, {
-      method: "DELETE",
-    });
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_APP_URL}/api/properties/${id}`,
+      {
+        method: "DELETE",
+      },
+    );
 
     if (!res.ok) {
       throw new Error(`Failed to delete property: ${res.status}`);
@@ -82,16 +94,20 @@ export const deleteProperty = async (id) => {
 
 // Function to update a property by ID
 export const updateProperty = async (id, data) => {
+  console.log(data);
   const sendData = JSON.stringify(data);
 
   try {
-    const res = await fetch(`${API_URL}/${id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_APP_URL}/api/properties/${id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: sendData,
       },
-      body: sendData,
-    });
+    );
 
     if (!res.ok) {
       throw new Error(`Failed to update property: ${res.status}`);
@@ -99,8 +115,10 @@ export const updateProperty = async (id, data) => {
 
     toast.success("Property updated successfully");
 
+    console.log(res);
+
     return res;
   } catch (error) {
-    throw new Error(`Error updating property: ${error.message}`);
+    console.log(`Error updating property: ${error.message}`);
   }
 };

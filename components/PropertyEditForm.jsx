@@ -38,7 +38,7 @@ function PropertyEditForm() {
         setValue("street", propertyData.location.street);
         setValue("city", propertyData.location.city);
         setValue("state", propertyData.location.state);
-        setValue("zipcode", parseInt(propertyData.location.zipcode));
+        setValue("zipCode", propertyData.location.zipCode);
         setValue("builtUpArea", parseInt(propertyData.details.builtUpArea));
         setValue("carpetArea", parseInt(propertyData.details.carpetArea));
         setValue("buildYear", parseInt(propertyData.details.builtYear));
@@ -89,6 +89,7 @@ function PropertyEditForm() {
 
     setIsLoading(true);
     const res = await updateProperty(id, propertyData);
+
     if (res.ok) {
       router.push(`/properties/${id}`);
     } else {
@@ -171,8 +172,8 @@ function PropertyEditForm() {
           </label>
           <input
             type="string"
-            id="zipcode"
-            name="zipcode"
+            id="zipCode"
+            name="zipCode"
             className="h-[50px] rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none lg:w-1/2"
             placeholder="Enter Zipcode"
             {...register("zipCode", { required: true })}
