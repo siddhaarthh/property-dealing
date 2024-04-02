@@ -32,36 +32,38 @@ async function Properties({ searchParams }) {
         ))}
       </div>
 
-      <div className="mt-10 flex justify-center gap-5">
-        <Link
-          className={`rounded bg-primary-500 px-5 text-2xl text-white ${page <= 1 && "pointer-events-none opacity-50"}`}
-          href={{
-            pathname: "/properties",
-            query: {
-              ...(search ? { search } : {}),
-              page: page > 1 ? page - 1 : 1,
-              ...(category ? { category } : {}),
-              ...(price ? { price } : {}),
-            },
-          }}
-        >
-          Prev
-        </Link>
-        <Link
-          className="rounded bg-primary-500 px-5 text-2xl text-white"
-          href={{
-            pathname: "/properties",
-            query: {
-              ...(search ? { search } : {}),
-              page: page + 1,
-              ...(category ? { category } : {}),
-              ...(price ? { price } : {}),
-            },
-          }}
-        >
-          Next
-        </Link>
-      </div>
+      {property.length === 6 && (
+        <div className="mt-10 flex justify-center gap-5">
+          <Link
+            className={`rounded bg-primary-500 px-5 text-2xl text-white ${page <= 1 && "pointer-events-none opacity-50"}`}
+            href={{
+              pathname: "/properties",
+              query: {
+                ...(search ? { search } : {}),
+                page: page > 1 ? page - 1 : 1,
+                ...(category ? { category } : {}),
+                ...(price ? { price } : {}),
+              },
+            }}
+          >
+            Prev
+          </Link>
+          <Link
+            className={`rounded bg-primary-500 px-5 text-2xl text-white ${page >= 2 && "pointer-events-none opacity-50"}`}
+            href={{
+              pathname: "/properties",
+              query: {
+                ...(search ? { search } : {}),
+                page: page === 2 ? 2 : page + 1,
+                ...(category ? { category } : {}),
+                ...(price ? { price } : {}),
+              },
+            }}
+          >
+            Next
+          </Link>
+        </div>
+      )}
     </section>
   );
 }
