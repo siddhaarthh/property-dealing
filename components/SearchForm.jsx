@@ -54,12 +54,11 @@ function SearchForm() {
       />
 
       <select
-        value={propertyType}
         className="rounded-lg px-3 py-2  text-primary-500 outline-none md:w-2/4 "
         onChange={(e) => setPropertyType(e.target.value)}
-        defaultValue={"category"}
+        defaultValue={"all"}
       >
-        <option value="category" selected>
+        <option value="all" disabled>
           Category
         </option>
         <option value="apartment">Apartment</option>
@@ -71,10 +70,9 @@ function SearchForm() {
       <select
         className="rounded-lg px-3 py-2  text-primary-500 outline-none md:w-2/4 "
         onChange={(e) => setPrice(e.target.value)}
-        defaultValue={"price"}
-        value={price}
+        defaultValue={"all"}
       >
-        <option value="price" selected>
+        <option value="all" disabled>
           Price
         </option>
         <option value="lowToHigh">Cost : Low to High</option>
