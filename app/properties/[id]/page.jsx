@@ -2,7 +2,7 @@ import { getSingleProperty } from "@/utils/propertyHandler";
 import Image from "next/image";
 import selectLocation from "/assets/location-icon-black.svg";
 import Buttons from "@/components/Buttons";
-import PropertyMap from "@/components/Propertymap";
+import PropertyMap from "@/components/PropertyMap";
 
 import PropertyImages from "@/components/PropertyImages";
 import React from "react";

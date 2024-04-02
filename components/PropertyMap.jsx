@@ -5,7 +5,6 @@ import Spinner from "./Spinner";
 import { Map, Marker } from "react-map-gl";
 import pin from "@/public/assets/pin.svg";
 import Image from "next/image";
-import { set } from "mongoose";
 
 function PropertyMap({ property }) {
   const [lat, setLat] = useState(null);
