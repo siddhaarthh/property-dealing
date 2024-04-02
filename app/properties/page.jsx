@@ -1,39 +1,47 @@
 import React from "react";
-import { IoIosArrowDown } from "react-icons/io";
-import BreadCrumb from "@/components/BreadCrumb";
-import PropertyPagePropertyCard from "@/components/PropertyPagePropertyCard";
-import { getPropertyHandler } from "@/utils/propertyHandler";
-import Buttons from "@/components/Buttons";
-import { revalidatePath } from "next/cache";
 
-async function Properties() {
-  const property = await getPropertyHandler();
+import PropertyCard from "@/components/PropertyCard";
+import { getProperty } from "@/actions/action";
+import Link from "next/link";
 
-  revalidatePath("/properties");
+async function Properties({ searchParams }) {
+  const page = Number(searchParams.page) || 1;
+  const limit = Number(searchParams.limit) || 6;
+
+  const category = searchParams.category || "";
+  const search = searchParams.search || "";
+  const price = searchParams.price || "";
+
+  const property = await getProperty({
+    page,
+    limit,
+    category,
+    query: search,
+    price,
+  });
 
   return (
-    <section className="relative mx-auto mb-10 w-full  xl:w-[80%]">
-      {/* <BreadCrumb /> */}
+    <section className="w-full bg-neutral-200 py-10 pb-20 md:px-5 lg:px-[10rem]">
+      <div className="h-20 w-full bg-primary-500"></div>
+      <div className="grid-col-1 grid gap-10 px-5 md:grid-cols-2 lg:px-0 xl:grid-cols-3">
+        {property.map((property) => (
+          <PropertyCard key={property._id} property={property} />
+        ))}
+      </div>
 
-      <div className="flex gap-10">
-        <div className="w-[20%] rounded-lg border-2">
-          <div className="flex">
-            <div
-              className="flex w-full items-center
-             justify-between p-4"
-            >
-              <p className="text-xl font-bold capitalize">Select Location</p>
-              <IoIosArrowDown className="text-xl" />
-            </div>
-          </div>
-        </div>
-        <div className="flex w-[80%] flex-col gap-5 ">
-          {property.map((property) => (
-            <PropertyPagePropertyCard key={property._id} property={property}>
-              <Buttons />
-            </PropertyPagePropertyCard>
-          ))}
-        </div>
+      <div className="mt-10 flex justify-center gap-5">
+        <Link
+          className={`rounded bg-primary-500 px-5 text-2xl text-white ${page <= 1 && "pointer-events-none opacity-50"}`}
+          href={`/properties?page=${page > 1 ? page - 1 : 1}`}
+        >
+          Prev
+        </Link>
+        <Link
+          className="rounded bg-primary-500 px-5 text-2xl text-white"
+          href={`/properties?page=${page + 1}`}
+        >
+          Next
+        </Link>
       </div>
     </section>
   );

@@ -21,7 +21,7 @@ function ProfileProperties() {
 
       try {
         const res = await fetch(
-          `http://localhost:3000/api/properties/user/${userId}`,
+          `${process.env.NEXT_PUBLIC_APP_URL}/api/properties/user/${userId}`,
         );
 
         if (!res.ok)
