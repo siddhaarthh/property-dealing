@@ -6,6 +6,7 @@ import PropertyMap from "@/components/PropertyMap";
 
 import PropertyImages from "@/components/PropertyImages";
 import React from "react";
+import { formatPrice } from "@/utils/helperFunction";
 
 async function PropertiesDetails({ params }) {
   const property = await getSingleProperty(params.id);
@@ -40,7 +41,9 @@ async function PropertiesDetails({ params }) {
       {/* property details */}
       <div className="mx-auto mb-10 flex flex-col gap-2 lg:w-[80%] lg:flex-row">
         <div className="mb-2 flex w-full flex-col justify-center gap-2 md:mb-0">
-          <h4 className=" font-playfair text-3xl">{property?.name}</h4>
+          <h4 className=" font-playfair text-2xl  md:text-3xl">
+            {property?.name}
+          </h4>
           <div className="flex items-center gap-2">
             <Image
               src={selectLocation}
@@ -54,7 +57,7 @@ async function PropertiesDetails({ params }) {
               {property.location.state},{property.location.zipCode}
             </span>
           </div>
-          <p className="text-2xl font-bold">CZK {property.price}</p>
+          <p className="text-2xl font-bold">{formatPrice(property.price)}</p>
         </div>
 
         {/* buttons */}
