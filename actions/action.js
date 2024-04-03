@@ -1,4 +1,5 @@
 import { Property } from "@/model/propertyModel";
+import ConnectDB from "@/utils/database";
 
 export const getProperty = async ({
   page = 1,
@@ -8,6 +9,7 @@ export const getProperty = async ({
   price,
 }) => {
   try {
+    await ConnectDB();
     const skip = (page - 1) * limit;
 
     const pipeline = [];
