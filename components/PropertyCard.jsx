@@ -14,10 +14,11 @@ function PropertyCard({ property }) {
       <Link href={`/properties/${property._id}`}>
         <Image
           src={property.propertyImages[2]}
-          width={400}
-          height={600}
+          width={0}
+          height={0}
+          sizes="100%"
           alt="property image"
-          className="rounded-2xl object-center"
+          className="h-full w-full rounded-2xl object-center"
         />
 
         <div className="mt-2 flex w-full flex-col gap-2  border-b-2 px-1 pb-4">

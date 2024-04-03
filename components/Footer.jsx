@@ -58,7 +58,7 @@ function Footer() {
           <div className="flex flex-col text-white md:gap-3">
             <h3 className="text-[18px] font-[700]">Our Location</h3>
             <div className="flex flex-col gap-3 whitespace-nowrap">
-              <p>2972, Old Street, Prague, Czech Republic</p>
+              <p>2972, Old Street, Prague</p>
               <div className="flex gap-3">
                 <Image
                   src={facebook}

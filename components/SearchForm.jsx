@@ -78,10 +78,6 @@ function SearchForm() {
         <option value="lowToHigh">Cost : Low to High</option>
         <option value="highToLow">Cost : Hight to Low</option>
       </select>
-
-      <button className="rounded-lg bg-white py-2 text-lg  text-primary-500 md:px-10">
-        Search
-      </button>
     </div>
   );
 }

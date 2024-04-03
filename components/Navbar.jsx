@@ -28,7 +28,13 @@ function Navbar() {
   return (
     <nav className="relative mx-auto flex items-center justify-between px-3 py-3 text-lg lg:px-3 xl:w-[80%]">
       <Link href="/" className="inline-block w-[150px]">
-        <Image src={logo} width={0} height={0} alt="Bitway Logo" />
+        <Image
+          src={logo}
+          width={0}
+          height={0}
+          alt="Bitway Logo"
+          priority={true}
+        />
       </Link>
 
       <ul className="hidden w-max justify-between md:flex  md:gap-5 lg:flex lg:gap-10">
