@@ -1,36 +1,149 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
+  <img width="100%" height="auto" src="https://github.com/DanteTerry/bitway/assets/112513589/19602cce-4147-4c8d-9c1f-42d4bc70d6ef"  />
+</div>
 
-## Getting Started
+<div align="center">
+  <img src="https://img.shields.io/badge/-Next_JS-black?style=for-the-badge&logoColor=white&logo=nextdotjs&color=000000" alt="nextdotjs" />
+  <img src="https://img.shields.io/badge/-TypeScript-black?style=for-the-badge&logoColor=white&logo=typescript&color=3178C6" alt="typescript" />
+  <img src="https://img.shields.io/badge/-Stripe-black?style=for-the-badge&logoColor=white&logo=stripe&color=008CDD" alt="stripe" />
+  <img src="https://img.shields.io/badge/-MongoDB-black?style=for-the-badge&logoColor=white&logo=mongodb&color=47A248" alt="mongodb" />
+  <img src="https://img.shields.io/badge/-Tailwind_CSS-black?style=for-the-badge&logoColor=white&logo=tailwindcss&color=06B6D4" alt="tailwindcss" />
+</div>
 
-First, run the development server:
+###
+
+<h2 align="center">Bitway</h2>
+
+###
+
+<p align="center">Bitwise simplifies property transactions, offering effortless browsing, management, and sharing of listings. Whether buying or selling, streamline your real estate journey with us.</p>
+
+## 📋 <a name="table">Table of Contents</a>
+
+1. 🤖 [Introduction](#introduction)
+2. ⚙️ [Tech Stack](#tech-stack)
+3. 🔋 [Features](#features)
+4. 🤸 [Quick Start](#quick-start)
+5. 🚀 [More](#more)
+
+## <a name="introduction">🤖 Introduction</a>
+
+Bitwise is a user-friendly platform facilitating property transactions, where users can effortlessly browse listings, manage properties, and share favorites across social media channels.
+
+Whether searching for a new home or listing a property for sale, Bitwise streamlines the process, providing intuitive tools for adding or modifying property details.
+
+With its easy-to-use interface, users can navigate through listings seamlessly, aiding in their decision-making process. By offering comprehensive features and accessibility, Bitwise enhances the property buying and selling experience.
+
+Empowering users to find their ideal properties with ease and efficiency, Bitwise simplifies your real estate journey.
+
+## <a name="tech-stack">⚙️ Tech Stack</a>
+
+- Next.js
+- TypeScript
+- MongoDB
+- NextAuth
+- Cloudinary
+- Stripe
+- Shadcn
+- TailwindCSS
+
+## <a name="features">🔋 Features</a>
+
+🔍 **Property Search**: Effortlessly find properties tailored to your preferences with advanced search functionality.
+
+📅 **Tour Scheduling**: Schedule property tours seamlessly, making the buying process convenient and efficient.
+
+🔄 **CRUD Operations**: Perform Create, Read, Update, and Delete operations on property listings with ease, ensuring complete control and flexibility.
+
+🚀 **Next.js and React**: Utilize Next.js and React for frontend development, delivering unparalleled flexibility and performance for an optimized user experience.
+
+💾 **MongoDB Data Management**: Efficiently manage property data with MongoDB, ensuring seamless scalability and reliability for your listings.
+
+🎨 **Tailwind CSS Styling**: Enhance user engagement with beautiful and responsive design powered by Tailwind CSS, providing an intuitive and visually appealing interface for users.
+
+## <a name="quick-start">🤸 Quick Start</a>
+
+Follow these steps to set up the project locally on your machine.
+
+**Prerequisites**
+
+Make sure you have the following installed on your machine:
+
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/en)
+- [npm](https://www.npmjs.com/) (Node Package Manager)
+
+**Cloning the Repository**
+
+```bash
+git clone https://github.com/DanteTerry/bitway.git
+cd bitway
+```
+
+**Installation**
+
+Install the project dependencies using npm:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Set Up Environment Variables**
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Create a new file named `.env` in the root of your project and add the following content:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```env
+#NEXT
+NEXT_PUBLIC_APP_URL=
 
-## Learn More
+#MONGODB
+MONGODB_USERNAME=
+MONGODB_PASSWORD=
+MONGODB_URI=
 
-To learn more about Next.js, take a look at the following resources:
+#GOOGLE
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#NEXTAUTH
+NEXTAUTH_URL=
+NEXTAUTH_INTERNAL=
+NEXTAUTH_SECRET=
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+#CLOUDINARY
+CLOUDINARY_CLOUD_NAME=
+CLOUDINARY_API_KEY=
+CLOUDINARY_API_SECRET=
 
-## Deploy on Vercel
+#GEOCODE
+GEOCODE_API_KEY=
+GEOCODE_URL=https://us1.locationiq.com/v1/search?key=YOUR_API_KEY&q=Statue%20of%20Liberty,%20New%20York&format=json
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#MAPBOX
+NEXT_PUBLIC_MAPBOX_API_KEY=
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
+
+Replace the placeholder values with your actual respective account credentials. You can obtain these credentials by signing up on the [Google](https://console.cloud.google.com), [MongoDB](https://www.mongodb.com), [GeoCode](https://geocode.maps.co),[NextAuth](https://next-auth.js.org),[Cloudinary](https://cloudinary.com) and [MapBox](https://mapbox.com)
+
+**Running the Project**
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
+
+##
+
+## Connect with Me
+
+Feel free to reach out if you have any questions, feedback, or just want to chat! You can connect with me via:
+
+- Email: [Arpityadav2998@gmail.com](mailto:arpityadav2998@gmail.com)
+- LinkedIn: [Arpit Yadav](https://www.linkedin.com/in/arpityadav0/)
+- Twitter: [@Arpit685895](https://twitter.com/Arpit685895)
+
+##
+
+<h2>Thank you for visiting</h2>
