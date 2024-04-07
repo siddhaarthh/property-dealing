@@ -32,9 +32,7 @@ export default function RootLayout({ children }) {
     <AuthProvider>
       <html lang="en" className={`${play_fair.variable} ${jost.variable}`}>
         <body className="overflow-x-hidden font-jost text-primary">
-          <Navbar />
           {children}
-          <Footer />
           <ToastContainer />
         </body>
       </html>

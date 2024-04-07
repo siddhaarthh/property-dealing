@@ -5,7 +5,7 @@ import bath from "@/assets/bath.svg";
 import parking from "@/assets/parking.svg";
 
 import Link from "next/link";
-import { trimDescription } from "@/utils/helperFunction";
+import { formatPrice, trimDescription } from "@/utils/helperFunction";
 
 function PropertyPagePropertyCard({ property, children }) {
   return (
@@ -25,7 +25,7 @@ function PropertyPagePropertyCard({ property, children }) {
         <h5 className="font-playfair text-xl font-bold md:text-2xl">
           {property?.name || "Property Name"}
         </h5>
-        <h6 className="text-xl">CZK {property?.price || "Price"}</h6>
+        <h6 className="text-xl">{formatPrice(property?.price) || "Price"}</h6>
         <p className="text-gray-500 md:w-3/4">
           {trimDescription(property?.description) || "Description"}
         </p>
@@ -48,7 +48,7 @@ function PropertyPagePropertyCard({ property, children }) {
         </div>
 
         <div className="flex w-full justify-between px-2">
-          <div className="flex items-center gap-3">
+          <div className="hidden items-center gap-3 md:flex">
             <Image
               src={property?.user?.image}
               width={40}
