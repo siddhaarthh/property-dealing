@@ -13,7 +13,7 @@ function PropertyCard({ property }) {
     <div className=" flex h-max flex-col items-center gap-3 rounded-2xl bg-white p-5 shadow-md ">
       <Link href={`/properties/${property._id}`}>
         <Image
-          src={property?.propertyImages[2]}
+          src={property?.propertyImages[property?.propertyImages.length - 1]}
           width={0}
           height={0}
           sizes="100%"
@@ -23,7 +23,7 @@ function PropertyCard({ property }) {
 
         <div className="mt-2 flex w-full flex-col gap-2  border-b-2 px-1 pb-4">
           <div>
-            <h5 className="font-playfair text-[18px] font-[700] text-primary md:text-[22px]">
+            <h5 className=" text-[18px] font-semibold text-primary md:text-[22px]">
               {property.name}
             </h5>
             <p className="text-[20px]">{formatPrice(property.price)}</p>

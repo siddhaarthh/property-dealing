@@ -37,6 +37,11 @@ function SavedProperties() {
       <h1 className="mb-4 text-center text-2xl font-semibold uppercase text-primary-500 lg:pt-5">
         Saved Properties
       </h1>
+      {properties.length === 0 && (
+        <div className="text-center text-3xl  text-primary-500">
+          <p>No saved properties</p>
+        </div>
+      )}
 
       <div className="grid-col-1 grid gap-10 px-5 md:grid-cols-2 lg:px-0 xl:grid-cols-3">
         {properties.map((property) => (
