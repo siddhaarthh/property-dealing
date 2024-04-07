@@ -16,7 +16,7 @@ async function Profile() {
           <div className="flex flex-col items-center gap-2">
             <div className="rounded-full">
               <Image
-                src={user.image}
+                src={user.image || "https://github.com/shadcn.png"}
                 height={100}
                 width={100}
                 alt="profile"

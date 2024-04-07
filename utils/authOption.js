@@ -1,9 +1,38 @@
 import GoogleProvider from "next-auth/providers/google";
 import User from "@/model/userModel";
 import ConnectDB from "./database";
+import CredentialsProvider from "next-auth/providers/credentials";
+import bcryptjs from "bcryptjs";
 
 export const authOptions = {
   providers: [
+    CredentialsProvider({
+      name: "Credentials",
+      credentials: {},
+
+      async authorize(credentials) {
+        const { email, password } = credentials;
+
+        try {
+          await ConnectDB();
+          const user = await User.findOne({ email });
+
+          if (!user) {
+            return null;
+          }
+
+          const passwordMatch = await bcryptjs.compare(password, user.password);
+
+          if (!passwordMatch) {
+            throw new Error("Invalid email or password");
+          }
+
+          return user;
+        } catch (error) {
+          console.log("Error", error);
+        }
+      },
+    }),
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
@@ -17,37 +46,32 @@ export const authOptions = {
     }),
   ],
   callbacks: {
-    async signIn({ profile }) {
-      // connecting to the database
-      await ConnectDB();
-
-      // check if the user already exists in the database
-      const existingUser = await User.findOne({ email: profile.email });
-
-      if (!existingUser) {
-        // create a new user if the user does not exist
-
-        const username = profile.name.slice(0, 20);
-        await User.create({
-          username,
-          email: profile.email,
-          image: profile.picture,
-        });
+    async jwt({ token, user }) {
+      if (user) {
+        token.id = user._id;
+        token.email = user.email;
+        token.username = user.username;
       }
 
-      return true;
+      return token;
     },
 
-    async session({ session }) {
+    async session({ token, session }) {
       await ConnectDB();
-      // get user from database
-      const user = await User.findOne({ email: session.user.email });
 
-      // assign the user id to the session
-      session.user.id = user._id.toString();
+      const user = await User.findById(token.id);
 
-      // return session
+      session.user = {
+        id: user.id,
+        email: user.email,
+        username: user.username,
+        image: user.image,
+      };
+
       return session;
     },
+  },
+  pages: {
+    signIn: "/sign-in",
   },
 };

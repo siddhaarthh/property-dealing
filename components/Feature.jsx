@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import pattern from "@/assets/pattern2.svg";
-import featureProperty from "@/assets/featureProperty.svg";
+import featureProperty from "@/public/assets/features/featuredProperty.jpg";
 import bed from "@/assets/bed-white.svg";
 import bath from "@/assets/bath-white.svg";
 import parking from "@/assets/parking-white.svg";
@@ -28,7 +28,7 @@ function Feature() {
         <div className="w-full ">
           <div className="relative">
             <Image
-              className="w-full rounded-lg object-cover"
+              className="w-full rounded-t-lg object-cover md:rounded-lg"
               src={featureProperty}
               width={0}
               height={0}

@@ -13,7 +13,7 @@ function PropertyCard({ property }) {
     <div className=" flex h-max flex-col items-center gap-3 rounded-2xl bg-white p-5 shadow-md ">
       <Link href={`/properties/${property._id}`}>
         <Image
-          src={property.propertyImages[2]}
+          src={property?.propertyImages[2]}
           width={0}
           height={0}
           sizes="100%"
@@ -54,7 +54,7 @@ function PropertyCard({ property }) {
       <div className="flex w-full justify-between px-2">
         <div className="flex items-center gap-3">
           <Image
-            src={property?.user?.image}
+            src={property?.user?.image || "https://github.com/shadcn.png"}
             width={40}
             height={40}
             alt="user picture"

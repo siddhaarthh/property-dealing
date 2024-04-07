@@ -50,7 +50,7 @@ function PropertyPagePropertyCard({ property, children }) {
         <div className="flex w-full justify-between px-2">
           <div className="hidden items-center gap-3 md:flex">
             <Image
-              src={property?.user?.image}
+              src={property?.user?.image || "https://github.com/shadcn.png"}
               width={40}
               height={40}
               alt="user picture"

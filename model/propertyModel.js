@@ -111,7 +111,6 @@ const propertySchema = new Schema(
       image: {
         type: String,
         ref: "User",
-        required: true,
       },
       name: {
         type: String,

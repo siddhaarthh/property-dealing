@@ -44,6 +44,7 @@ export const getSingleProperty = async (id) => {
 
 // Function to create a new property
 export const createProperty = async (data) => {
+  console.log(data);
   const sendData = JSON.stringify(data);
 
   try {

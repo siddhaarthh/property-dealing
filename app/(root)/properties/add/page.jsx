@@ -6,6 +6,7 @@ import { useSession } from "next-auth/react";
 import { createProperty } from "@/utils/propertyHandler";
 import { changeTo64 } from "@/utils/helperFunction";
 import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 
 function AddProperty() {
   const { register, handleSubmit } = useForm();
@@ -14,6 +15,8 @@ function AddProperty() {
   const [isLoading, setIsLoading] = useState(false);
 
   const User = session?.user;
+
+  console.log(User);
 
   const onSubmit = async (data, e) => {
     e.preventDefault();
@@ -53,8 +56,7 @@ function AddProperty() {
 
       user: {
         id: User.id,
-        image: User.image,
-        name: User.name,
+        name: User.username,
         email: User.email,
       },
 
@@ -71,7 +73,7 @@ function AddProperty() {
     } catch (error) {
       // Handle any errors that occur during property creation
       console.error("Error creating property:", error);
-      alert("Failed to add property. Please try again later.");
+      toast("Failed to add property. Please try again later.");
     }
   };
 
@@ -500,7 +502,6 @@ function AddProperty() {
           </div>
 
           <button
-            disabled={isLoading}
             className={`mx-auto mb-5 flex h-[50px] w-1/2 items-center justify-center rounded-xl ${!isLoading ? "bg-primary-500" : "bg-gray-500"}  text-white`}
           >
             {isLoading ? "Adding Please Wait.." : "Add Property"}

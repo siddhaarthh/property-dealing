@@ -7,8 +7,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navLinks } from "@/constants/constant";
 import agent1 from "@/assets/agents/agent1.svg";
-import { FaGoogle } from "react-icons/fa";
-import { signIn, signOut, useSession, getProviders } from "next-auth/react";
+
+import { signOut, useSession, getProviders } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 function Navbar() {
   const { data: session } = useSession();
@@ -16,6 +17,7 @@ function Navbar() {
   const [providers, setIsProviders] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const setProviders = async () => {
@@ -94,7 +96,7 @@ function Navbar() {
         {session && (
           <button onClick={() => setIsProfileOpen((set) => !set)}>
             <Image
-              src={session.user.image || agent1}
+              src={session?.user?.image || "https://github.com/shadcn.png"}
               width={40}
               height={40}
               sizes="100%"
@@ -105,19 +107,14 @@ function Navbar() {
         )}
 
         {/* sign in button */}
-        {!session &&
-          providers &&
-          Object.values(providers).map((provider, index) => (
-            <button
-              key={index}
-              onClick={() => signIn(provider.id)}
-              className="flex w-full items-center gap-2 rounded-xl bg-primary-500 p-2 px-3 text-white"
-            >
-              <FaGoogle /> Login
-            </button>
-          ))}
-
-        {/* mobile nav bar */}
+        {!session && (
+          <button
+            onClick={() => router.push("/sign-in")}
+            className="flex w-full items-center gap-2 rounded-xl bg-primary-500 p-2 px-3 text-white"
+          >
+            SignIn or SignUp
+          </button>
+        )}
 
         {
           <button
