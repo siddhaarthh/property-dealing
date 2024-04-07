@@ -59,6 +59,7 @@ function Navbar() {
               <Link
                 className={`${pathName === link.path ? "text-primary-500" : ""}`}
                 href={link.path}
+                onClick={() => setIsOpen(false)}
               >
                 {link.name}
               </Link>
@@ -112,7 +113,7 @@ function Navbar() {
             onClick={() => router.push("/sign-in")}
             className="flex w-full items-center gap-2 rounded-xl bg-primary-500 p-2 px-3 text-white"
           >
-            SignIn or SignUp
+            Sign In
           </button>
         )}
 

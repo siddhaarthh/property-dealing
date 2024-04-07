@@ -43,7 +43,17 @@ export const getProperty = async ({
 
     property = JSON.parse(JSON.stringify(property));
 
-    return property;
+    // Count the total properties based on the entire pipeline
+    const totalPropertiesPipeline = [...pipeline];
+    totalPropertiesPipeline.pop(); // Remove the $limit stage
+    const totalProperties = await Property.aggregate([
+      ...totalPropertiesPipeline,
+      { $count: "total" },
+    ]);
+
+    const totalPages = Math.ceil(totalProperties[0]?.total / limit);
+
+    return { property, totalPages };
   } catch (error) {
     console.error(error.message);
   }

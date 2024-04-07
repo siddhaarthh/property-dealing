@@ -73,7 +73,7 @@ export const POST = async (request) => {
 
     // Redirect to property page with newly created property ID
     return Response.redirect(
-      `http://localhost:3000/properties/${property._id}`,
+      `${process.env.NEXT_PUBLIC_APP_URL}/properties/${property._id}`,
     );
   } catch (error) {
     // Handle any errors that occur during the POST request

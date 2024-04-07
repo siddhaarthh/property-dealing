@@ -29,7 +29,7 @@ async function PropertiesDetails({ params }) {
       {/* property image */}
       <div className="mx-auto mb-5 lg:w-full">
         <Image
-          src={property?.propertyImages[3]}
+          src={property?.propertyImages[property?.propertyImages.length - 1]}
           height={0}
           width={1200}
           alt="property image"

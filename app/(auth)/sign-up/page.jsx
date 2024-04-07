@@ -41,7 +41,7 @@ function SignUp() {
       reset();
       router.push("/sign-in");
     } catch (error) {
-      toast(error.message);
+      toast("An error occurred");
     }
   };
 
@@ -126,7 +126,7 @@ function SignUp() {
               disabled={isSubmitting}
               className="rounded-lg bg-primary-500 p-2 text-white"
             >
-              Sign Up
+              {isSubmitting ? "Creating Account..." : "Create Account"}
             </button>
           </form>
           <div className="mt-4 flex h-max items-center gap-2">

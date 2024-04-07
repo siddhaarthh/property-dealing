@@ -92,8 +92,11 @@ function SignIn() {
               <p className="text-red-500">{errors.password.message}</p>
             )}
 
-            <button className="rounded-lg bg-primary-500 p-2 text-white">
-              Sign In
+            <button
+              disabled={isSubmitting}
+              className="rounded-lg bg-primary-500 p-2 text-white disabled:bg-gray-700"
+            >
+              {isSubmitting ? "Signing In..." : "Sign In"}
             </button>
           </form>
 

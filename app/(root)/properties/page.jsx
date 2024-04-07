@@ -13,13 +13,15 @@ async function Properties({ searchParams }) {
   const search = searchParams.search || "";
   const price = searchParams.price || "";
 
-  const property = await getProperty({
+  const { property, totalPages } = await getProperty({
     page,
     limit,
     category,
     query: search,
     price,
   });
+
+  console.log(totalPages);
 
   return (
     <section className="w-full bg-neutral-200 py-5 md:px-5 lg:px-[10rem]">
@@ -32,7 +34,7 @@ async function Properties({ searchParams }) {
         ))}
       </div>
 
-      {property.length === 6 && (
+      {totalPages > page && (
         <div className="mt-10 flex justify-center gap-5">
           <Link
             className={`rounded bg-primary-500 px-5 text-2xl text-white ${page <= 1 && "pointer-events-none opacity-50"}`}
