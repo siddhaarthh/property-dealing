@@ -22,11 +22,11 @@ function PropertyPagePropertyCard({ property, children }) {
       </Link>
 
       <div className="flex w-full flex-col gap-2 md:px-4">
-        <h5 className="font-playfair text-2xl font-bold">
+        <h5 className="font-playfair text-xl font-bold md:text-2xl">
           {property?.name || "Property Name"}
         </h5>
         <h6 className="text-xl">CZK {property?.price || "Price"}</h6>
-        <p className="w-3/4 text-gray-500">
+        <p className="text-gray-500 md:w-3/4">
           {trimDescription(property?.description) || "Description"}
         </p>
 

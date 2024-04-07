@@ -12,7 +12,7 @@ async function Profile() {
   return (
     <section className="relative mx-auto mb-10 w-full  xl:w-[80%]">
       <div className="flex flex-col  gap-5 p-4 md:flex-row">
-        <div className="rounded-lg p-4 md:w-[20%]">
+        <div className="h-max rounded-lg p-4 md:w-[20%]">
           <div className="flex flex-col items-center gap-2">
             <div className="rounded-full">
               <Image
