@@ -1,5 +1,4 @@
 import Feature from "@/components/Feature";
-import Hero from "@/components/Hero";
 import HeroSection from "@/components/HeroSection";
 import OurAgents from "@/components/OurAgents";
 import PropertyHome from "@/components/PropertyHome";
@@ -9,7 +8,6 @@ export default function Home() {
   return (
     <main className="flex flex-col gap-14">
       <HeroSection />
-      {/* <Hero /> */}
       <StartNow />
       <PropertyHome />
       <Feature />

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import SearchBox from "./SearchBox";
-import heroImg from "@/assets/hero-image.png";
+import heroImg from "@/public/hero-image.png";
 
 function HeroSection() {
   return (

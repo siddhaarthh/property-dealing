@@ -9,8 +9,8 @@ import { trimDescription } from "@/utils/helperFunction";
 
 function PropertyPagePropertyCard({ property, children }) {
   return (
-    <div className="flex w-full items-center gap-6 rounded-lg border-2  p-4  shadow-sm">
-      <Link className="h-[90%] w-[50%]" href={`/properties/${property._id}`}>
+    <div className="flex w-full flex-col items-center gap-6 rounded-lg border-2 p-4  shadow-sm  md:flex-row">
+      <Link className="h-[90%] md:w-[50%]" href={`/properties/${property._id}`}>
         <Image
           src={property.propertyImages[2]}
           width={0}
@@ -21,7 +21,7 @@ function PropertyPagePropertyCard({ property, children }) {
         />
       </Link>
 
-      <div className="flex w-full flex-col gap-2 px-4">
+      <div className="flex w-full flex-col gap-2 md:px-4">
         <h5 className="font-playfair text-2xl font-bold">
           {property?.name || "Property Name"}
         </h5>
