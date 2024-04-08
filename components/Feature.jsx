@@ -37,9 +37,9 @@ function Feature() {
           </div>
 
           <div className=" -bottom-20 right-24 flex  flex-col items-start  gap-3 rounded-b-xl bg-primary-500 p-6 text-white md:absolute md:rounded-xl lg:w-max lg:gap-3">
-            <h5 className=" font-playfair text-lg  font-bold lg:text-[24px]">
+            <h2 className=" font-playfair text-lg  font-bold lg:text-[24px]">
               Modern luxury sea view villa sale in California
-            </h5>
+            </h2>
             <p className="text-[18px]">$20,000,000</p>
             <p>
               Experience coastal luxury in California&apos;s modern sea view

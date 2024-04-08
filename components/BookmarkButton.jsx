@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 function BookmarkButton({ property }) {
   const { data: session } = useSession();
   const userId = session?.user?.id;
+  console.log(userId);
   const [isBookmarked, setIsBookmarked] = useState(false);
 
   useEffect(() => {
@@ -75,6 +76,7 @@ function BookmarkButton({ property }) {
     <div className="flex items-center gap-2">
       {isBookmarked ? (
         <button
+          aria-label="Remove bookmark"
           className="rounded-xl border bg-neutral-200 p-2"
           onClick={handleClick}
         >
@@ -84,6 +86,7 @@ function BookmarkButton({ property }) {
         <button
           className="rounded-xl border bg-neutral-200 p-2"
           onClick={handleClick}
+          aria-label="Bookmark"
         >
           <Bookmark />
         </button>

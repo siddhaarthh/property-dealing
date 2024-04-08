@@ -21,8 +21,6 @@ async function Properties({ searchParams }) {
     price,
   });
 
-  console.log(totalPages);
-
   return (
     <section className="w-full bg-neutral-200 py-5 md:px-5 lg:px-[10rem]">
       <div className="mb-5 w-full rounded-lg bg-primary-500 py-5">

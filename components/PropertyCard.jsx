@@ -23,9 +23,9 @@ function PropertyCard({ property }) {
 
         <div className="mt-2 flex w-full flex-col gap-2  border-b-2 px-1 pb-4">
           <div>
-            <h5 className=" text-[18px] font-semibold text-primary md:text-[22px]">
+            <h2 className=" text-[18px] font-semibold text-primary md:text-[22px]">
               {property.name}
-            </h5>
+            </h2>
             <p className="text-[20px]">{formatPrice(property.price)}</p>
           </div>
           <p className="text-justify text-gray-500  ">

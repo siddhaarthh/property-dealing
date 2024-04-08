@@ -57,6 +57,7 @@ function SearchForm() {
         className="rounded-lg px-3 py-2  text-primary-500 outline-none md:w-2/4 "
         onChange={(e) => setPropertyType(e.target.value)}
         defaultValue={"all"}
+        aria-label="category"
       >
         <option value="all" disabled>
           Category
@@ -71,6 +72,7 @@ function SearchForm() {
         className="rounded-lg px-3 py-2  text-primary-500 outline-none md:w-2/4 "
         onChange={(e) => setPrice(e.target.value)}
         defaultValue={"all"}
+        aria-label="price"
       >
         <option value="all" disabled>
           Price
