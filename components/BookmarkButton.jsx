@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 function BookmarkButton({ property }) {
   const { data: session } = useSession();
   const userId = session?.user?.id;
-  console.log(userId);
+
   const [isBookmarked, setIsBookmarked] = useState(false);
 
   useEffect(() => {
