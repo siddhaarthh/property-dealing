@@ -23,8 +23,9 @@
 1. 🤖 [Introduction](#introduction)
 2. ⚙️ [Tech Stack](#tech-stack)
 3. 🔋 [Features](#features)
-4. 🤸 [Quick Start](#quick-start)
-5. 🚀 [More](#more)
+4. ⚡ [Performance](#performance)
+5. 🤸 [Quick Start](#quick-start)
+6. 🚀 [More](#more)
 
 ## <a name="introduction">🤖 Introduction</a>
 
@@ -60,6 +61,18 @@ Empowering users to find their ideal properties with ease and efficiency, Bitwis
 💾 **MongoDB Data Management**: Efficiently manage property data with MongoDB, ensuring seamless scalability and reliability for your listings.
 
 🎨 **Tailwind CSS Styling**: Enhance user engagement with beautiful and responsive design powered by Tailwind CSS, providing an intuitive and visually appealing interface for users.
+
+## <a name="Performance">⚡ Performance</a>
+
+🚀 **Performance**: Website is optimized for speed and efficiency, implementing industry-standard techniques such as code minification, lazy loading, and efficient caching mechanisms. These practices ensure a seamless user experience even on low-bandwidth connections or older devices.
+
+🔍 **SEO Best Practices**: BitWay follows best practices for search engine optimization (SEO), including the use of clean and semantic HTML, optimized meta tags, and responsive design.
+
+♿ **Accessibility Best Practices**: BitWay is meticulously designed to meet web accessibility standards, including compliance with the Web Content Accessibility Guidelines (WCAG). Features such as alternative text for images, keyboard navigation support, and semantic HTML structure ensure that our app is usable by all individuals, regardless of disabilities.
+
+<div align="center">
+  <img width="70%" height="auto" src="https://github.com/community/community/assets/112513589/e6113d99-205b-4c9a-bdc4-30bd306b60c2"  />
+</div>
 
 ## <a name="quick-start">🤸 Quick Start</a>
 
