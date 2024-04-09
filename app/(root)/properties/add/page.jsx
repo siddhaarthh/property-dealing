@@ -16,8 +16,6 @@ function AddProperty() {
 
   const User = session?.user;
 
-  console.log(User);
-
   const onSubmit = async (data, e) => {
     e.preventDefault();
 

@@ -70,6 +70,7 @@ function SignIn() {
               {...register("email", {
                 required: "Email is required",
               })}
+              defaultValue={"johndoe@gmail.com"}
             />
             {errors.email && (
               <p className="text-red-500">{errors.email.message}</p>
@@ -86,6 +87,7 @@ function SignIn() {
                   message: "Password must not exceed 8 characters",
                 },
               })}
+              defaultValue={"asdfghjkl"}
             />
 
             {errors.password && (

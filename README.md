@@ -62,7 +62,7 @@ Empowering users to find their ideal properties with ease and efficiency, Bitwis
 
 🎨 **Tailwind CSS Styling**: Enhance user engagement with beautiful and responsive design powered by Tailwind CSS, providing an intuitive and visually appealing interface for users.
 
-## <a name="Performance">⚡ Performance</a>
+## <a name="performance">⚡ Performance</a>
 
 🚀 **Performance**: Website is optimized for speed and efficiency, implementing industry-standard techniques such as code minification, lazy loading, and efficient caching mechanisms. These practices ensure a seamless user experience even on low-bandwidth connections or older devices.
 
@@ -71,7 +71,7 @@ Empowering users to find their ideal properties with ease and efficiency, Bitwis
 ♿ **Accessibility Best Practices**: BitWay is meticulously designed to meet web accessibility standards, including compliance with the Web Content Accessibility Guidelines (WCAG). Features such as alternative text for images, keyboard navigation support, and semantic HTML structure ensure that our app is usable by all individuals, regardless of disabilities.
 
 <div align="center">
-  <img width="100%" height="auto" src="https://github.com/community/community/assets/112513589/e6113d99-205b-4c9a-bdc4-30bd306b60c2"  />
+  <img width="100%" height="auto" src="https://gist.github.com/assets/112513589/82f2387b-32b4-4727-8184-7e18a65cb7fb"  />
 </div>
 
 ## <a name="quick-start">🤸 Quick Start</a>
