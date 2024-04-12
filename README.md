@@ -39,12 +39,10 @@ Empowering users to find their ideal properties with ease and efficiency, Bitwis
 ## <a name="tech-stack">⚙️ Tech Stack</a>
 
 - Next.js
-- TypeScript
+- React
 - MongoDB
 - NextAuth
 - Cloudinary
-- Stripe
-- Shadcn
 - TailwindCSS
 
 ## <a name="features">🔋 Features</a>
