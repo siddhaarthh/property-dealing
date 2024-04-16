@@ -70,10 +70,6 @@ Empowering users to find their ideal properties with ease and efficiency, Bitwis
 
 ♿ **Accessibility Best Practices**: BitWay is meticulously designed to meet web accessibility standards, including compliance with the Web Content Accessibility Guidelines (WCAG). Features such as alternative text for images, keyboard navigation support, and semantic HTML structure ensure that our app is usable by all individuals, regardless of disabilities.
 
-<div align="center">
-  <img width="100%" height="auto" src="https://gist.github.com/assets/112513589/82f2387b-32b4-4727-8184-7e18a65cb7fb"  />
-</div>
-
 ## <a name="quick-start">🤸 Quick Start</a>
 
 Follow these steps to set up the project locally on your machine.

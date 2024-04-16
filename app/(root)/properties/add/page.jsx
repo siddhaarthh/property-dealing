@@ -9,7 +9,11 @@ import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 
 function AddProperty() {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   const { data: session } = useSession();
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
@@ -95,6 +99,11 @@ function AddProperty() {
                 placeholder="Enter Property Name"
                 {...register("propertyName", { required: true, maxLength: 80 })}
               />
+              {errors.propertyName && (
+                <span className="mt-2 text-red-500">
+                  This field is required
+                </span>
+              )}
             </div>
             <div className="flex flex-col">
               <label className="mb-2 font-bold" htmlFor="price">
@@ -107,6 +116,11 @@ function AddProperty() {
                 placeholder="Enter Price"
                 {...register("price", { required: true })}
               />
+              {errors.price && (
+                <span className="mt-2 text-red-500">
+                  This field is required
+                </span>
+              )}
             </div>
 
             <div className="flex flex-col">
@@ -121,6 +135,11 @@ function AddProperty() {
                 placeholder="Enter Street name"
                 {...register("street", { required: true })}
               />
+              {errors.street && (
+                <span className="mt-2 text-red-500">
+                  This field is required
+                </span>
+              )}
             </div>
             <div className="flex flex-col">
               <label className="mb-2 font-bold" htmlFor="location">
@@ -134,6 +153,11 @@ function AddProperty() {
                 placeholder="Enter City"
                 {...register("city", { required: true })}
               />
+              {errors.city && (
+                <span className="mt-2 text-red-500">
+                  This field is required
+                </span>
+              )}
             </div>
             <div className="flex flex-col">
               <label className="mb-2 font-bold" htmlFor="location">
@@ -147,6 +171,11 @@ function AddProperty() {
                 placeholder="Enter State"
                 {...register("state", { required: true })}
               />
+              {errors.state && (
+                <span className="mt-2 text-red-500">
+                  This field is required
+                </span>
+              )}
             </div>
 
             <div className="flex flex-col">
@@ -161,6 +190,11 @@ function AddProperty() {
                 placeholder="Enter Zipcode"
                 {...register("zipCode", { required: true })}
               />
+              {errors.zipCode && (
+                <span className="mt-2 text-red-500">
+                  This field is required
+                </span>
+              )}
             </div>
 
             <div className="flex flex-col">
@@ -174,6 +208,11 @@ function AddProperty() {
                 placeholder="Enter BuiltUp Area"
                 {...register("builtUpArea", { required: true })}
               />
+              {errors.builtUpArea && (
+                <span className="mt-2 text-red-500">
+                  This field is required
+                </span>
+              )}
             </div>
             <div className="flex flex-col">
               <label className="mb-2 font-bold" htmlFor="carpetArea">
@@ -186,6 +225,11 @@ function AddProperty() {
                 placeholder="Enter Carpet Area"
                 {...register("carpetArea", { required: true })}
               />
+              {errors.carpetArea && (
+                <span className="mt-2 text-red-500">
+                  This field is required
+                </span>
+              )}
             </div>
             <div className="flex flex-col">
               <label className="mb-2 font-bold" htmlFor="buildYear">
@@ -198,6 +242,11 @@ function AddProperty() {
                 placeholder="Enter Build Year"
                 {...register("buildYear", { required: true })}
               />
+              {errors.buildYear && (
+                <span className="mt-2 text-red-500">
+                  This field is required
+                </span>
+              )}
             </div>
             <div className="flex flex-col">
               <label className="mb-2 font-bold" htmlFor="dimensions">
@@ -210,6 +259,11 @@ function AddProperty() {
                 placeholder="Enter Dimensions"
                 {...register("dimensions", { required: true })}
               />
+              {errors.dimensions && (
+                <span className="mt-2 text-red-500">
+                  This field is required
+                </span>
+              )}
             </div>
 
             <div className="flex flex-col">
@@ -223,6 +277,11 @@ function AddProperty() {
                 placeholder="Enter Bedroom Number"
                 {...register("bedrooms", { required: true })}
               />
+              {errors.bedrooms && (
+                <span className="mt-2 text-red-500">
+                  This field is required
+                </span>
+              )}
             </div>
 
             <div className="flex flex-col">
@@ -236,6 +295,11 @@ function AddProperty() {
                 placeholder="Enter Bathroom Number"
                 {...register("bathrooms", { required: true })}
               />
+              {errors.bathrooms && (
+                <span className="mt-2 text-red-500">
+                  This field is required
+                </span>
+              )}
             </div>
 
             {/* balcony */}
@@ -250,6 +314,11 @@ function AddProperty() {
                 placeholder="Enter Balcony Number"
                 {...register("balcony", { required: true })}
               />
+              {errors.balcony && (
+                <span className="mt-2 text-red-500">
+                  This field is required
+                </span>
+              )}
             </div>
 
             {/* parking */}
@@ -275,6 +344,12 @@ function AddProperty() {
                 <option value="carport">Carport</option>
                 <option value="no parking">No parking</option>
               </select>
+
+              {errors.parking && (
+                <span className="mt-2 text-red-500">
+                  This field is required
+                </span>
+              )}
             </div>
 
             {/* property category */}
@@ -298,6 +373,12 @@ function AddProperty() {
                 <option value="condo">Condo</option>
                 <option value="villa">Villa</option>
               </select>
+
+              {errors.propertyCategory && (
+                <span className="mt-2 text-red-500">
+                  This field is required
+                </span>
+              )}
             </div>
 
             {/* status */}
@@ -323,6 +404,9 @@ function AddProperty() {
                 <option value="off market">Off Market</option>
               </select>
             </div>
+            {errors.status && (
+              <span className="mt-2 text-red-500">This field is required</span>
+            )}
           </div>
 
           {/* amenities */}
@@ -459,8 +543,11 @@ function AddProperty() {
               id="description"
               className="h-[200px] w-full  rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none"
               placeholder="Write big description about property"
-              {...register("description", { required: true })}
+              {...register("description", { required: true, maxLength: 500 })}
             />
+            {errors.description && (
+              <span className="mt-2 text-red-500">This field is required</span>
+            )}
           </div>
 
           {/* images */}
@@ -479,6 +566,11 @@ function AddProperty() {
                 accept="image/*"
                 {...register("propertyImages", { required: true })}
               />
+              {errors.propertyImages && (
+                <span className="mt-2 text-red-500">
+                  This field is required
+                </span>
+              )}
             </div>
 
             {/* floor plan images */}
@@ -496,6 +588,11 @@ function AddProperty() {
                 accept="image/*"
                 {...register("floorPlanImages", { required: true })}
               />
+              {errors.floorPlanImages && (
+                <span className="mt-2 text-red-500">
+                  This field is required
+                </span>
+              )}
             </div>
           </div>
 

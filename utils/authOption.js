@@ -3,6 +3,7 @@ import User from "@/model/userModel";
 import ConnectDB from "./database";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcryptjs from "bcryptjs";
+import SignUp from "@/app/(auth)/sign-up/page";
 
 export const authOptions = {
   providers: [
