@@ -1,7 +1,13 @@
+"use client";
 import Image from "next/image";
 import React from "react";
+import { useForm } from "react-hook-form";
 
 function Schedule() {
+  const {
+    register,
+    formState: { isSubmitting, errors },
+  } = useForm();
   return (
     <div className="h-max rounded-lg px-5  lg:w-2/6">
       <h6 className=" mb-5 text-xl font-bold uppercase">Schedule a tour</h6>
@@ -31,7 +37,11 @@ function Schedule() {
             type="text"
             className="h-[50px] w-full rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none"
             placeholder="Enter Your Name"
+            {...register("name", { required: true })}
           />
+          {errors.name && (
+            <p className="text-red-500">This field is required</p>
+          )}
         </div>
         <div className="w-full">
           <label htmlFor="email" className="mb-2 font-bold">
@@ -42,7 +52,12 @@ function Schedule() {
             type="text"
             className="h-[50px] w-full rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none"
             placeholder="Enter Your Email"
+            {...register("email", { required: true })}
           />
+
+          {errors.email && (
+            <p className="text-red-500">This field is required</p>
+          )}
         </div>
         <div className="w-full">
           <label htmlFor="phoneNumber" className="mb-2 font-bold">
@@ -53,7 +68,11 @@ function Schedule() {
             type="number"
             className="h-[50px] w-full rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none"
             placeholder="Enter Your Phone Number"
+            {...register("phoneNumber", { required: true })}
           />
+          {errors.phoneNumber && (
+            <p className="text-red-500">This field is required</p>
+          )}
         </div>
         <div className="w-full">
           <label htmlFor="message" className="mb-2 font-bold">
@@ -64,10 +83,18 @@ function Schedule() {
             type="text"
             className="h-[100px] w-full rounded-xl border border-[#A4A6AC33] p-3 text-primary-500 outline-none"
             placeholder="Enter Your Message"
+            {...register("message", { required: true })}
           />
+          {errors.message && (
+            <p className="text-red-500">This field is required</p>
+          )}
         </div>
 
-        <button className="rounded-xl bg-primary-500 p-3 text-white">
+        <button
+          disabled={isSubmitting}
+          className="rounded-xl bg-primary-500 p-3 text-white"
+          onClick={() => console.log("Request sent")}
+        >
           Send a request
         </button>
       </div>
