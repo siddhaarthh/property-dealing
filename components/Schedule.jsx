@@ -45,7 +45,7 @@ function Schedule() {
               {...register("name", { required: true })}
             />
             {errors.name && (
-              <p className="text-red-500">This field is required</p>
+              <p className="mb-2 mt-2 text-red-500">This field is required</p>
             )}
           </div>
           <div className="w-full">
@@ -61,7 +61,7 @@ function Schedule() {
             />
 
             {errors.email && (
-              <p className="text-red-500">This field is required</p>
+              <p className="mb-2 mt-2 text-red-500">This field is required</p>
             )}
           </div>
           <div className="w-full">
@@ -76,7 +76,7 @@ function Schedule() {
               {...register("phoneNumber", { required: true })}
             />
             {errors.phoneNumber && (
-              <p className="text-red-500">This field is required</p>
+              <p className="mb-2 mt-2 text-red-500">This field is required</p>
             )}
           </div>
           <div className="w-full">
@@ -91,7 +91,7 @@ function Schedule() {
               {...register("message", { required: true })}
             />
             {errors.message && (
-              <p className="text-red-500">This field is required</p>
+              <p className="mb-2 mt-2 text-red-500">This field is required</p>
             )}
           </div>
           <button
