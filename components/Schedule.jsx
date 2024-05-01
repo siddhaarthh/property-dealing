@@ -9,9 +9,7 @@ function Schedule() {
     formState: { isSubmitting, errors },
     handleSubmit,
   } = useForm();
-  const onsubmit = (data) => {
-    console.log(data);
-  };
+  const onsubmit = (data) => {};
   return (
     <div className="h-max rounded-lg px-5  lg:w-2/6">
       <h6 className=" mb-5 text-xl font-bold uppercase">Schedule a tour</h6>
